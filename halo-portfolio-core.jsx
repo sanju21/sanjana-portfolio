@@ -37,17 +37,17 @@ const Navbar = () => {
     if (el) window.scrollTo({ top: el.offsetTop - 24, behavior: "smooth" });
   };
   return (
-    <nav className="absolute top-0 left-0 right-0 z-20 px-6 py-5">
-      <div className="max-w-[88rem] mx-auto flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <span className="text-2xl font-medium tracking-tight text-black">Sanjana Rane</span>
+    <nav className="absolute top-0 left-0 right-0 z-20 px-4 sm:px-6 py-4 sm:py-5">
+      <div className="max-w-[88rem] mx-auto flex items-center justify-between gap-3">
+        <div className="flex items-center gap-2 min-w-0">
+          <span className="text-xl sm:text-2xl font-medium tracking-tight text-black truncate">Sanjana Rane</span>
         </div>
         <div className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <a key={l} href={`#${l.toLowerCase()}`} onClick={go(l.toLowerCase())} className="text-base text-gray-700 hover:text-black font-medium transition-colors duration-200">{l}</a>
           ))}
         </div>
-        <a href="mailto:sanjana.s.rane21@gmail.com" className="btn-pill text-base font-medium px-7 py-2.5 rounded-full transition-colors duration-200">Get in touch</a>
+        <a href="mailto:sanjana.s.rane21@gmail.com" className="btn-pill text-sm sm:text-base font-medium px-4 sm:px-7 py-2 sm:py-2.5 rounded-full transition-colors duration-200 shrink-0 whitespace-nowrap">Get in touch</a>
       </div>
     </nav>
   );
@@ -91,14 +91,14 @@ const HeroMarquee = () => (
 
 // ─────────── Hero ───────────
 const HeroSection = () => (
-  <section className="flex-1 px-6 pt-20 pb-6 flex items-end">
+  <section className="flex-1 px-4 sm:px-6 pt-20 pb-4 sm:pb-6 flex items-end">
     <div className="max-w-[88rem] mx-auto w-full">
-      <div className="relative w-full rounded-2xl overflow-hidden" style={{ minHeight: "calc(100vh - 96px)" }}>
+      <div className="relative w-full rounded-2xl overflow-hidden" style={{ minHeight: "calc(100svh - 88px)" }}>
         <video autoPlay muted loop playsInline className="object-cover absolute inset-0 w-full h-full" src={VIDEO_A}></video>
         <div className="hero-scrim absolute inset-0 z-[1] pointer-events-none"></div>
-        <div className="relative z-10 flex flex-col items-start justify-start min-h-full p-12 pt-28 pb-16">
+        <div className="relative z-10 flex flex-col items-start justify-start min-h-full p-6 pt-24 pb-10 sm:p-10 sm:pt-28 md:p-12 md:pt-28 md:pb-16">
           <p className="accent-text text-sm md:text-base font-semibold mb-4">AI Automation, Digital Campaigns &amp; Marketing Operations</p>
-          <h1 className="text-black text-5xl md:text-6xl font-medium leading-tight max-w-2xl mb-4" style={{ letterSpacing: "-0.04em" }}>
+          <h1 className="text-black text-[2.5rem] leading-[1.05] sm:text-5xl sm:leading-tight md:text-6xl font-medium max-w-2xl mb-4" style={{ letterSpacing: "-0.04em" }}>
             Boosting marketing<br />campaigns through AI.
           </h1>
           <p className="text-black/80 text-base md:text-lg max-w-md mb-8 leading-relaxed" style={{ fontFamily: "'Inter', ui-sans-serif, system-ui, sans-serif" }}>
@@ -121,13 +121,13 @@ const stats = [
 ];
 
 const AboutSection = () => (
-  <section id="about" className="bg-page px-6 py-24">
+  <section id="about" className="bg-page px-4 sm:px-6 py-16 sm:py-20 md:py-24">
     <div className="max-w-[88rem] mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-10 md:mb-16 items-start">
         <div>
-          <h2 className="text-black text-4xl md:text-5xl font-medium leading-tight" style={{ letterSpacing: "-0.03em" }}>Meet Sanjana</h2>
+          <h2 className="text-black text-3xl sm:text-4xl md:text-5xl font-medium leading-tight" style={{ letterSpacing: "-0.03em" }}>Meet Sanjana</h2>
         </div>
-        <p className="text-black/70 text-2xl md:text-3xl leading-relaxed">
+        <p className="text-black/70 text-xl sm:text-2xl md:text-3xl leading-relaxed">
           A marketing operations specialist blending AI automation and engineered prompts with digital campaign delivery where precision, discretion and white-glove execution meet scale.
         </p>
       </div>
@@ -175,10 +175,10 @@ const TOOLS = [
 ];
 
 const SkillsSection = () => (
-  <section id="skills" className="bg-page px-6 py-12">
-    <div className="max-w-[88rem] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-center">
+  <section id="skills" className="bg-page px-4 sm:px-6 py-8 md:py-12">
+    <div className="max-w-[88rem] mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 items-center">
       <div className="text-black/70 text-base leading-relaxed">
-        Platforms &amp; tools I work<br />across every day.
+        Platforms &amp; tools I work across every day.
       </div>
       <div className="md:col-span-3 overflow-hidden py-3">
         <div className="backers-track">

@@ -25,32 +25,32 @@ const JobLogo = ({ domain, dark }) => {
 };
 
 const ExperienceCardHeader = ({ j, dark }) => (
-  <div className="flex items-start justify-between gap-4">
+  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
     <div className="flex items-center gap-3.5">
       <JobLogo domain={j.domain} dark={dark} />
-      <h3 className={`text-2xl font-medium leading-snug ${dark ? "text-white" : "text-black"}`} style={{ letterSpacing: "-0.02em" }}>{j.company}</h3>
+      <h3 className={`text-xl sm:text-2xl font-medium leading-snug ${dark ? "text-white" : "text-black"}`} style={{ letterSpacing: "-0.02em" }}>{j.company}</h3>
     </div>
-    <span className={`text-sm whitespace-nowrap mt-1 ${dark ? "text-white/50" : "text-black/50"}`}>{j.period}</span>
+    <span className={`text-sm whitespace-nowrap sm:mt-1 ${dark ? "text-white/50" : "text-black/50"}`}>{j.period}</span>
   </div>
 );
 
 const ExperienceSection = () => (
-  <section id="experience" className="bg-page px-6 py-24">
-    <div className="max-w-[88rem] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+  <section id="experience" className="bg-page px-4 sm:px-6 py-16 sm:py-20 md:py-24">
+    <div className="max-w-[88rem] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
       <div className="md:pr-12 md:pt-2 md:sticky md:top-10">
         <p className="accent-text text-sm font-semibold mb-2">Where I've delivered</p>
-        <h2 className="text-black text-5xl md:text-6xl font-medium leading-none mb-6" style={{ letterSpacing: "-0.04em" }}>Experience</h2>
+        <h2 className="text-black text-4xl sm:text-5xl md:text-6xl font-medium leading-none mb-6" style={{ letterSpacing: "-0.04em" }}>Experience</h2>
         <p className="text-black/60 text-base leading-relaxed max-w-sm">
           Progressive roles across Tier-1 financial institutions, global technology and hospitality — delivering multi-region campaigns and regulated reporting.
         </p>
-        <div className="mt-8 rounded-3xl overflow-hidden relative min-h-[360px] md:min-h-[640px]">
+        <div className="mt-8 rounded-3xl overflow-hidden relative min-h-[280px] sm:min-h-[360px] md:min-h-[640px]">
           <video autoPlay muted loop playsInline className="object-cover absolute inset-0 w-full h-full" src={VIDEO_B}></video>
         </div>
       </div>
 
       <div className="flex flex-col gap-4">
         {JOBS.map((j, i) => (
-          <div key={j.company} className={`rounded-2xl p-7 flex flex-col justify-between min-h-56 ${i === 0 ? "bg-card-dark" : "bg-white"}`}>
+          <div key={j.company} className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between min-h-56 ${i === 0 ? "bg-card-dark" : "bg-white"}`}>
             <ExperienceCardHeader j={j} dark={i === 0} />
             <div className={`text-sm mt-1 ${i === 0 ? "text-white/70" : "text-black/60"}`}>{j.role} · {j.region}</div>
             <p className={`text-base mt-5 leading-relaxed ${i === 0 ? "text-white/60" : "text-black/70"}`}>{j.note}</p>
@@ -69,17 +69,17 @@ const AWARDS = [
 ];
 
 const RecognitionSection = () => (
-  <section id="recognition" className="bg-page px-6 py-24">
+  <section id="recognition" className="bg-page px-4 sm:px-6 py-16 sm:py-20 md:py-24">
     <div className="max-w-[88rem] mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-start">
-        <h2 className="text-black text-4xl md:text-5xl font-medium leading-tight" style={{ letterSpacing: "-0.03em" }}>Recognition &amp; Impact</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-10 md:mb-16 items-start">
+        <h2 className="text-black text-3xl sm:text-4xl md:text-5xl font-medium leading-tight" style={{ letterSpacing: "-0.03em" }}>Recognition &amp; Impact</h2>
         <p className="text-black/70 text-xl md:text-2xl leading-relaxed">
           Certified in Google Analytics, HubSpot and SQL — and repeatedly recognised for automation and delivery excellence.
         </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {AWARDS.map((a) => (
-          <div key={a.title} className="rounded-2xl bg-white p-7 min-h-64 flex flex-col justify-between">
+          <div key={a.title} className="rounded-2xl bg-white p-6 sm:p-7 min-h-64 flex flex-col justify-between">
             <div className="text-black/50 text-sm">{a.year}</div>
             <div>
               <h3 className="text-black text-2xl font-medium leading-snug mt-6" style={{ letterSpacing: "-0.02em" }}>{a.title}</h3>
@@ -95,13 +95,13 @@ const RecognitionSection = () => (
 
 // ─────────── Contact ───────────
 const ContactSection = () => (
-  <section id="contact" className="bg-page px-6 pb-24 pt-8">
+  <section id="contact" className="bg-page px-4 sm:px-6 pb-16 sm:pb-24 pt-8">
     <div className="max-w-[88rem] mx-auto">
       <div className="rounded-3xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
         {/* Left: message + actions */}
-        <div className="bg-card-dark p-10 md:p-16 flex flex-col justify-center order-2 md:order-1">
+        <div className="bg-card-dark p-8 sm:p-10 md:p-16 flex flex-col justify-center order-2 md:order-1">
           <p className="accent-text text-sm font-semibold tracking-wide uppercase mb-4" style={{ color: "#8FB4FF" }}>Let's connect</p>
-          <h2 className="text-white text-5xl md:text-6xl font-medium leading-tight mb-6" style={{ letterSpacing: "-0.04em" }}>
+          <h2 className="text-white text-4xl sm:text-5xl md:text-6xl font-medium leading-tight mb-6" style={{ letterSpacing: "-0.04em" }}>
             Let's build the<br />next campaign.
           </h2>
           <p className="text-white/70 text-base md:text-lg max-w-md mb-8 leading-relaxed" style={{ fontFamily: "'Inter', ui-sans-serif, system-ui, sans-serif" }}>
@@ -161,7 +161,7 @@ const App = () => {
   useEffect(() => { applyPalette(t.palette, t.coloredButtons); }, [t.palette, t.coloredButtons]);
   return (
   <div className="flex flex-col bg-page">
-    <div className="h-screen flex flex-col overflow-hidden relative">
+    <div className="min-h-[100svh] md:h-screen flex flex-col md:overflow-hidden relative">
       <Navbar />
       <HeroSection />
     </div>
