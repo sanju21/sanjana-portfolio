@@ -17,7 +17,7 @@ const JobLogo = ({ domain, dark }) => {
   const [failed, setFailed] = React.useState(false);
   if (!domain || failed) return null;
   return (
-    <span className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${dark ? "bg-white" : "bg-white ring-1 ring-black/5"}`}>
+    <span className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-white ${dark ? "" : "ring-1 ring-black/5"}`}>
       <img src={`https://www.google.com/s2/favicons?sz=128&domain=${domain}`} alt="" loading="lazy"
         onError={() => setFailed(true)} className="w-8 h-8 object-contain" />
     </span>

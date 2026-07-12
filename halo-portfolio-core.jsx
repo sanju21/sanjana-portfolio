@@ -61,7 +61,7 @@ const LogoChip = ({ name, domain }) => {
       {domain && !failed && (
         <img src={`https://www.google.com/s2/favicons?sz=128&domain=${domain}`} alt="" loading="lazy"
           onError={() => setFailed(true)}
-          className="w-10 h-10 object-contain rounded-[7px] bg-white/70 shrink-0" />
+          className="w-10 h-10 object-contain rounded-[7px] bg-white p-1 shrink-0" />
       )}
       <span className="text-black/70 font-medium" style={{ fontSize: "18px", letterSpacing: "-0.01em" }}>{name}</span>
     </span>
