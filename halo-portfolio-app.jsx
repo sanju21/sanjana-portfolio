@@ -35,7 +35,7 @@ const ExperienceCardHeader = ({ j, dark }) => (
 );
 
 const ExperienceSection = () => (
-  <section id="experience" className="bg-page px-4 sm:px-6 py-16 sm:py-20 md:py-24">
+  <section id="experience" className="bg-page px-4 sm:px-6 py-14 sm:py-20 md:py-24">
     <div className="max-w-[88rem] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
       <div className="md:pr-12 md:pt-2 md:sticky md:top-10">
         <p className="accent-text text-sm font-semibold mb-2">Where I've delivered</p>
@@ -69,7 +69,7 @@ const AWARDS = [
 ];
 
 const RecognitionSection = () => (
-  <section id="recognition" className="bg-page px-4 sm:px-6 py-16 sm:py-20 md:py-24">
+  <section id="recognition" className="bg-page px-4 sm:px-6 py-14 sm:py-20 md:py-24">
     <div className="max-w-[88rem] mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-10 md:mb-16 items-start">
         <h2 className="text-black text-3xl sm:text-4xl md:text-5xl font-medium leading-tight" style={{ letterSpacing: "-0.03em" }}>Recognition &amp; Impact</h2>
@@ -77,12 +77,12 @@ const RecognitionSection = () => (
           Certified in Google Analytics, HubSpot and SQL — and repeatedly recognised for automation and delivery excellence.
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
         {AWARDS.map((a) => (
-          <div key={a.title} className="rounded-2xl bg-white p-6 sm:p-7 min-h-64 flex flex-col justify-between">
+          <div key={a.title} className="rounded-2xl bg-white p-6 sm:p-7 min-h-[220px] sm:min-h-64 flex flex-col justify-between">
             <div className="text-black/50 text-sm">{a.year}</div>
             <div>
-              <h3 className="text-black text-2xl font-medium leading-snug mt-6" style={{ letterSpacing: "-0.02em" }}>{a.title}</h3>
+              <h3 className="text-black text-xl sm:text-2xl font-medium leading-snug mt-5 sm:mt-6" style={{ letterSpacing: "-0.02em" }}>{a.title}</h3>
               <div className="text-black/60 text-sm mt-2">{a.org}</div>
               <p className="text-black/70 text-base mt-4 leading-relaxed">{a.note}</p>
             </div>
@@ -95,7 +95,7 @@ const RecognitionSection = () => (
 
 // ─────────── Contact ───────────
 const ContactSection = () => (
-  <section id="contact" className="bg-page px-4 sm:px-6 pb-16 sm:pb-24 pt-8">
+  <section id="contact" className="bg-page px-4 sm:px-6 pb-14 sm:pb-24 pt-0 sm:pt-8">
     <div className="max-w-[88rem] mx-auto">
       <div className="rounded-3xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
         {/* Left: message + actions */}
@@ -109,20 +109,20 @@ const ContactSection = () => (
           </p>
           <div className="flex flex-wrap gap-3">
             <PillButton href="mailto:sanjana.s.rane21@gmail.com">Email me</PillButton>
-            <a href="tel:+917619441862" className="inline-flex items-center bg-white text-black text-base md:text-lg font-medium px-8 py-3.5 rounded-full hover:bg-white/80 transition-colors duration-200" style={{ boxShadow: "0 0 0 0.5px rgba(0,0,0,0.05), 0 4px 30px rgba(0,0,0,0.08)" }}>
+            <a href="tel:+917619441862" className="inline-flex items-center bg-white text-black text-base md:text-lg font-medium px-6 sm:px-8 py-3.5 rounded-full hover:bg-white/80 transition-colors duration-200" style={{ boxShadow: "0 0 0 0.5px rgba(0,0,0,0.05), 0 4px 30px rgba(0,0,0,0.08)" }}>
               +91 76194 41862
             </a>
           </div>
         </div>
         {/* Right: portrait */}
-        <div className="relative min-h-[420px] md:min-h-[560px] order-1 md:order-2 bg-card-dark">
+        <div className="relative min-h-[340px] sm:min-h-[420px] md:min-h-[560px] order-1 md:order-2 bg-card-dark">
           <img src="assets/sanjana-portrait.jpeg" alt="Sanjana Rane" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "50% 18%" }} />
           {/* seam blend into the navy panel (desktop only) */}
           <div className="hidden md:block absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(90deg, var(--card-dark) 0%, rgba(20,35,58,0.35) 14%, rgba(20,35,58,0) 32%)" }}></div>
           {/* bottom vignette for the caption */}
           <div className="absolute inset-x-0 bottom-0 h-1/3 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(11,20,36,0.85), transparent)" }}></div>
-          <div className="absolute left-8 bottom-7 z-10">
-            <div className="text-white text-xl font-medium" style={{ letterSpacing: "-0.02em" }}>Sanjana Rane</div>
+          <div className="absolute left-6 sm:left-8 bottom-6 sm:bottom-7 z-10">
+            <div className="text-white text-lg sm:text-xl font-medium" style={{ letterSpacing: "-0.02em" }}>Sanjana Rane</div>
             <div className="text-white/70 text-sm mt-0.5">Marketing Operations &amp; AI Automation</div>
           </div>
         </div>

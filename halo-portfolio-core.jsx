@@ -121,7 +121,7 @@ const stats = [
 ];
 
 const AboutSection = () => (
-  <section id="about" className="bg-page px-4 sm:px-6 py-16 sm:py-20 md:py-24">
+  <section id="about" className="bg-page px-4 sm:px-6 py-14 sm:py-20 md:py-24">
     <div className="max-w-[88rem] mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-10 md:mb-16 items-start">
         <div>
@@ -132,27 +132,27 @@ const AboutSection = () => (
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="rounded-2xl overflow-hidden lg:col-span-2 p-7 min-h-80 flex flex-col justify-between relative">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        <div className="rounded-2xl overflow-hidden lg:col-span-2 p-6 sm:p-7 min-h-[260px] sm:min-h-80 flex flex-col justify-between relative gap-6">
           <video autoPlay muted loop playsInline className="object-cover absolute inset-0 w-full h-full" src={VIDEO_B}></video>
           <div className="hero-scrim absolute inset-0 z-[1] pointer-events-none"></div>
           <h3 className="relative z-10 text-black text-[28px] font-medium leading-snug" style={{ letterSpacing: "-0.02em" }}>Campaigns that convert</h3>
           <p className="relative z-10 text-black text-[20px] font-semibold max-w-xs">Eight-figure paid-media programmes with a 20% lift in conversion and data-driven audience targeting.</p>
         </div>
-        <div className="bg-card-dark rounded-2xl p-7 min-h-80 flex flex-col justify-between">
+        <div className="bg-card-dark rounded-2xl p-6 sm:p-7 min-h-[240px] sm:min-h-80 flex flex-col justify-between gap-6">
           <h3 className="text-white text-2xl font-medium leading-snug">Always compliant,<br />always precise.</h3>
           <p className="text-white/60 text-base">Regulated fund collateral and factsheets across EMEA, US and APAC — accuracy is non-negotiable.</p>
         </div>
-        <div className="bg-card-dark rounded-2xl p-7 min-h-80 flex flex-col justify-between">
+        <div className="bg-card-dark rounded-2xl p-6 sm:p-7 min-h-[240px] sm:min-h-80 flex flex-col justify-between gap-6">
           <h3 className="text-white text-2xl font-medium leading-snug">AI-powered<br />automation</h3>
           <p className="text-white/60 text-base">Architected data-extraction workflows saving ~200 hours annually across monthly and quarter-end deliverables.</p>
         </div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-3 sm:mt-4">
         {stats.map((s) => (
-          <div key={s.v} className="rounded-2xl bg-white p-7 flex flex-col justify-between min-h-40">
-            <div className="accent-text text-4xl md:text-5xl font-medium" style={{ letterSpacing: "-0.03em" }}>{s.k}</div>
+          <div key={s.v} className="rounded-2xl bg-white p-5 sm:p-7 flex flex-col justify-between min-h-32 sm:min-h-40">
+            <div className="accent-text text-3xl sm:text-4xl md:text-5xl font-medium" style={{ letterSpacing: "-0.03em" }}>{s.k}</div>
             <div className="text-black/60 text-sm mt-3">{s.v}</div>
           </div>
         ))}
@@ -175,7 +175,7 @@ const TOOLS = [
 ];
 
 const SkillsSection = () => (
-  <section id="skills" className="bg-page px-4 sm:px-6 py-8 md:py-12">
+  <section id="skills" className="bg-page px-4 sm:px-6 py-6 sm:py-8 md:py-12">
     <div className="max-w-[88rem] mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 items-center">
       <div className="text-black/70 text-base leading-relaxed">
         Platforms &amp; tools I work across every day.
