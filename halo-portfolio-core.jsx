@@ -15,6 +15,27 @@ const Monogram = ({ className = "" }) => (
 const VIDEO_A = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260423_161253_c72b1869-400f-45ed-ac0c-52f68c2ed5bd.mp4";
 const VIDEO_B = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260423_183428_ab5e672a-f608-4dcb-b319-f3e040f02e2d.mp4";
 
+// Self-hosted brand marks, keyed by domain. Vectors where the brand publishes one,
+// otherwise the largest square icon the company ships. Chips are ~40-48px, so these
+// are all square emblems — wordmark logos are unusable at that size.
+// Domains absent here fall back to the favicon service.
+const LOGOS = {
+  "morganstanley.com": "assets/logos/morganstanley-mark.png",
+  "jpmorganchase.com": "assets/logos/jpmorganchase.png",
+  "huawei.com": "assets/logos/huawei.svg",
+  "larsentoubro.com": "assets/logos/larsentoubro.svg",
+  "adobe.com": "assets/logos/adobe.svg",
+  "tableau.com": "assets/logos/tableau.svg",
+  "powerbi.microsoft.com": "assets/logos/powerbi.svg",
+  "salesforce.com": "assets/logos/salesforce.svg",
+  "ads.google.com": "assets/logos/googleads.svg",
+  "marketingplatform.google.com": "assets/logos/googlemarketingplatform.svg",
+  "mysql.com": "assets/logos/mysql.svg",
+};
+
+const logoSrc = (domain) =>
+  LOGOS[domain] || `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
+
 // ─────────── Pill button ───────────
 const PillButton = ({ children, textClass = "text-base md:text-lg", href, onClick }) => {
   const Tag = href ? "a" : "button";
@@ -59,9 +80,9 @@ const LogoChip = ({ name, domain }) => {
   return (
     <span className="mx-7 shrink-0 flex items-center gap-3 whitespace-nowrap">
       {domain && !failed && (
-        <img src={`https://www.google.com/s2/favicons?sz=128&domain=${domain}`} alt="" loading="lazy"
+        <img src={logoSrc(domain)} alt={`${name} logo`} loading="lazy"
           onError={() => setFailed(true)}
-          className="w-10 h-10 object-contain rounded-[7px] bg-white p-1 shrink-0" />
+          className="w-10 h-10 object-contain rounded-[7px] bg-white p-1.5 shrink-0" />
       )}
       <span className="text-black/70 font-medium" style={{ fontSize: "18px", letterSpacing: "-0.01em" }}>{name}</span>
     </span>
@@ -191,4 +212,4 @@ const SkillsSection = () => (
   </section>
 );
 
-Object.assign(window, { ArrowRight, PillButton, Navbar, HeroSection, AboutSection, SkillsSection, VIDEO_B });
+Object.assign(window, { ArrowRight, PillButton, Navbar, HeroSection, AboutSection, SkillsSection, VIDEO_B, logoSrc });
