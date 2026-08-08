@@ -107,13 +107,15 @@ const ContactSection = () => (
           <p className="text-white/70 text-base md:text-lg max-w-md mb-8 leading-relaxed" style={{ fontFamily: "'Inter', ui-sans-serif, system-ui, sans-serif" }}>
             Based in Bengaluru, India · Open to relocating to the UAE.
           </p>
-          <div className="flex flex-wrap gap-3">
-            <PillButton href={EMAIL}>Email me</PillButton>
+          {/* On phones these stack; flex-wrap alone left them ragged because each
+              kept its natural width, so go full-width and centred below sm. */}
+          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3">
+            <PillButton href={EMAIL} className="w-full sm:w-auto justify-center sm:justify-start">Email me</PillButton>
             <a href={LINKEDIN} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 bg-white text-black text-base md:text-lg font-medium px-6 sm:px-8 py-3.5 rounded-full hover:bg-white/80 transition-colors duration-200" style={{ boxShadow: "0 0 0 0.5px rgba(0,0,0,0.05), 0 4px 30px rgba(0,0,0,0.08)" }}>
+              className="inline-flex items-center justify-center gap-2.5 w-full sm:w-auto bg-white text-black text-base md:text-lg font-medium px-6 sm:px-8 py-3.5 rounded-full hover:bg-white/80 transition-colors duration-200" style={{ boxShadow: "0 0 0 0.5px rgba(0,0,0,0.05), 0 4px 30px rgba(0,0,0,0.08)" }}>
               <LinkedInIcon className="w-5 h-5" /> LinkedIn
             </a>
-            <a href="tel:+917619441862" className="inline-flex items-center bg-white text-black text-base md:text-lg font-medium px-6 sm:px-8 py-3.5 rounded-full hover:bg-white/80 transition-colors duration-200" style={{ boxShadow: "0 0 0 0.5px rgba(0,0,0,0.05), 0 4px 30px rgba(0,0,0,0.08)" }}>
+            <a href="tel:+917619441862" className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-black text-base md:text-lg font-medium px-6 sm:px-8 py-3.5 rounded-full hover:bg-white/80 transition-colors duration-200" style={{ boxShadow: "0 0 0 0.5px rgba(0,0,0,0.05), 0 4px 30px rgba(0,0,0,0.08)" }}>
               +91 76194 41862
             </a>
           </div>

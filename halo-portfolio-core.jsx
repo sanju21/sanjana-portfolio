@@ -81,10 +81,10 @@ const LazyVideo = ({ src, className, eager = false }) => {
 };
 
 // ─────────── Pill button ───────────
-const PillButton = ({ children, textClass = "text-base md:text-lg", href, onClick }) => {
+const PillButton = ({ children, textClass = "text-base md:text-lg", href, onClick, className = "" }) => {
   const Tag = href ? "a" : "button";
   return (
-    <Tag href={href} onClick={onClick} className={`btn-pill inline-flex items-center gap-3 ${textClass} font-medium pl-8 pr-2 py-2 rounded-full transition-colors duration-200`}>
+    <Tag href={href} onClick={onClick} className={`btn-pill inline-flex items-center gap-3 ${textClass} font-medium pl-8 pr-2 py-2 rounded-full transition-colors duration-200 ${className}`}>
       {children}
       <span className="bg-white rounded-full p-2 flex items-center justify-center">
         <ArrowRight className="w-5 h-5 text-black" />
