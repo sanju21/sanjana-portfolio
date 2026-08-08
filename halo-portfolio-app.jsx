@@ -44,7 +44,7 @@ const ExperienceSection = () => (
           Progressive roles across Tier-1 financial institutions, global technology and hospitality — delivering multi-region campaigns and regulated reporting.
         </p>
         <div className="mt-8 rounded-3xl overflow-hidden relative min-h-[280px] sm:min-h-[360px] md:min-h-[640px]">
-          <video autoPlay muted loop playsInline className="object-cover absolute inset-0 w-full h-full" src={VIDEO_B}></video>
+          <LazyVideo className="object-cover absolute inset-0 w-full h-full" src={VIDEO_B} />
         </div>
       </div>
 
@@ -52,8 +52,8 @@ const ExperienceSection = () => (
         {JOBS.map((j, i) => (
           <div key={j.company} className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between min-h-56 ${i === 0 ? "bg-card-dark" : "bg-white"}`}>
             <ExperienceCardHeader j={j} dark={i === 0} />
-            <div className={`text-sm mt-1 ${i === 0 ? "text-white/70" : "text-black/60"}`}>{j.role} · {j.region}</div>
-            <p className={`text-base mt-5 leading-relaxed ${i === 0 ? "text-white/60" : "text-black/70"}`}>{j.note}</p>
+            <div className={`text-sm mt-1 ${i === 0 ? "text-white/75" : "text-black/60"}`}>{j.role} · {j.region}</div>
+            <p className={`text-base mt-5 leading-relaxed ${i === 0 ? "text-white/75" : "text-black/70"}`}>{j.note}</p>
           </div>
         ))}
       </div>
@@ -80,7 +80,7 @@ const RecognitionSection = () => (
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
         {AWARDS.map((a) => (
           <div key={a.title} className="rounded-2xl bg-white p-6 sm:p-7 min-h-[220px] sm:min-h-64 flex flex-col justify-between">
-            <div className="text-black/50 text-sm">{a.year}</div>
+            <div className="text-black/60 text-sm">{a.year}</div>
             <div>
               <h3 className="text-black text-xl sm:text-2xl font-medium leading-snug mt-5 sm:mt-6" style={{ letterSpacing: "-0.02em" }}>{a.title}</h3>
               <div className="text-black/60 text-sm mt-2">{a.org}</div>
@@ -108,7 +108,11 @@ const ContactSection = () => (
             Based in Bengaluru, India · Open to relocating to the UAE.
           </p>
           <div className="flex flex-wrap gap-3">
-            <PillButton href="mailto:sanjana.s.rane21@gmail.com">Email me</PillButton>
+            <PillButton href={EMAIL}>Email me</PillButton>
+            <a href={LINKEDIN} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 bg-white text-black text-base md:text-lg font-medium px-6 sm:px-8 py-3.5 rounded-full hover:bg-white/80 transition-colors duration-200" style={{ boxShadow: "0 0 0 0.5px rgba(0,0,0,0.05), 0 4px 30px rgba(0,0,0,0.08)" }}>
+              <LinkedInIcon className="w-5 h-5" /> LinkedIn
+            </a>
             <a href="tel:+917619441862" className="inline-flex items-center bg-white text-black text-base md:text-lg font-medium px-6 sm:px-8 py-3.5 rounded-full hover:bg-white/80 transition-colors duration-200" style={{ boxShadow: "0 0 0 0.5px rgba(0,0,0,0.05), 0 4px 30px rgba(0,0,0,0.08)" }}>
               +91 76194 41862
             </a>
@@ -132,12 +136,17 @@ const ContactSection = () => (
 );
 
 // ─────────── App ───────────
+// [page-bg, dark-card, pill-bg, accent]
+// Pill and accent values are tuned to clear WCAG AA (4.5:1) — white button
+// labels against pill-bg, and 16px accent-coloured eyebrow text against
+// page-bg. Hue and saturation are preserved; only lightness moved, by the
+// smallest step that clears the threshold.
 const PALETTES = {
-  "Cobalt (recommended)": ["#F1F5FB", "#14233A", "#2F6BFF", "#2F6BFF"],
+  "Cobalt (recommended)": ["#F1F5FB", "#14233A", "#2E6BFF", "#1E5FFF"],
   "Indigo AI":    ["#F3F2FB", "#1E1B4B", "#4F46E5", "#4F46E5"],
   "Slate Violet": ["#F5F5F5", "#2B2644", "#111111", "#6D5DD3"],
-  "Emerald Growth":["#F0F5F1", "#0C2E22", "#12946A", "#0F8F5E"],
-  "Signal Orange":["#FAF6F1", "#191512", "#E4571F", "#D64B16"],
+  "Emerald Growth":["#F0F5F1", "#0C2E22", "#108761", "#0D7D52"],
+  "Signal Orange":["#FAF6F1", "#191512", "#CD4C19", "#C44514"],
   "Magenta Pulse":["#FAF1F6", "#2A0E24", "#C21F80", "#C21F80"],
 };
 

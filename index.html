@@ -23,11 +23,15 @@
     font-weight: 600; font-display: swap;
   }
 
+  /* Must match the "Cobalt (recommended)" entry in PALETTES, otherwise the page
+     paints the old colours for a frame before React applies the palette.
+     pill/accent are WCAG-AA tuned: white-on-pill and 16px accent text both
+     clear 4.5:1. */
   :root {
     --page-bg: #F1F5FB;
     --card-dark: #14233A;
-    --pill-bg: #2F6BFF;
-    --accent: #2F6BFF;
+    --pill-bg: #2E6BFF;
+    --accent: #1E5FFF;
   }
 
   html, body { background: var(--page-bg); }
@@ -63,6 +67,26 @@
   ::-webkit-scrollbar { width: 8px; height: 8px; }
   ::-webkit-scrollbar-track { background: var(--page-bg); }
   ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 4px; }
+
+  /* Keyboard focus: the pill buttons have no visible default ring against
+     their own background, so give every interactive element an explicit one. */
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid #14233A;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Respect reduced-motion: freeze both marquees, stop the looping video
+     backgrounds, and drop smooth scrolling. */
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track, .backers-track { animation: none !important; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 </style>
 </head>
 <body>

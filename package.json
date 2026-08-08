@@ -1,0 +1,15 @@
+{
+  "name": "sanjana-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.7",
+    "@babel/core": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
+    "tailwindcss": "^3.4.4"
+  }
+}
