@@ -17,9 +17,16 @@
 // the 3 MB Babel saving.
 
 import { execFileSync } from "node:child_process";
-import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync, existsSync, statSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { cpSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync, existsSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+
+// Short content hash, so every build that changes a file changes its URL.
+// Without this the browser happily serves a cached bundle after a deploy and
+// the site looks stale for as long as max-age allows.
+const hashOf = (path) =>
+  createHash("sha256").update(readFileSync(path)).digest("hex").slice(0, 10);
 
 const root = dirname(fileURLToPath(import.meta.url));
 const dist = join(root, "dist");
@@ -45,14 +52,22 @@ mkdirSync(dist, { recursive: true });
 // The .jsx files share one scope in the browser today (Babel concatenates them
 // into the global scope), so they are compiled individually and loaded in the
 // same order as classic scripts. No modules, no bundler, same semantics.
+// Maps the plain output name to its hashed filename, for rewriting index.html.
+const hashedName = {};
+
 for (const file of ENTRIES) {
-  const out = join(dist, file.replace(/\.jsx$/, ".js"));
+  const plain = file.replace(/\.jsx$/, ".js");
+  const out = join(dist, plain);
   execFileSync(
     "npx",
     ["babel", join(root, file), "--presets", "@babel/preset-react", "--out-file", out],
     { stdio: "inherit", cwd: root },
   );
-  console.log(`  compiled ${file} -> ${kb(statSync(out).size)}`);
+  const size = statSync(out).size;
+  const final = plain.replace(/\.js$/, `.${hashOf(out)}.js`);
+  renameSync(out, join(dist, final));
+  hashedName[plain] = final;
+  console.log(`  compiled ${file} -> ${final} (${kb(size)})`);
 }
 
 // --------------------------------------------------------------- 2. tailwind
@@ -62,7 +77,10 @@ execFileSync(
   ["tailwindcss", "-c", "tailwind.config.js", "-i", "tailwind.src.css", "-o", cssOut, "--minify"],
   { stdio: "inherit", cwd: root },
 );
-console.log(`  tailwind -> ${kb(statSync(cssOut).size)}`);
+const cssSize = statSync(cssOut).size;
+const cssFinal = `styles.${hashOf(cssOut)}.css`;
+renameSync(cssOut, join(dist, cssFinal));
+console.log(`  tailwind -> ${cssFinal} (${kb(cssSize)})`);
 
 // ------------------------------------------------------------------- 3. html
 let html = readFileSync(join(root, "index.html"), "utf8");
@@ -82,7 +100,7 @@ if (/babel\/standalone/.test(html)) throw new Error("Babel standalone still refe
 // Swap the Tailwind CDN runtime compiler for the built stylesheet.
 html = html.replace(
   /\s*<script src="https:\/\/cdn\.tailwindcss\.com"><\/script>/,
-  '\n<link rel="stylesheet" href="styles.css" />',
+  `\n<link rel="stylesheet" href="${cssFinal}" />`,
 );
 if (/cdn\.tailwindcss\.com/.test(html)) throw new Error("Tailwind CDN still referenced");
 
@@ -95,10 +113,16 @@ html = html.replace(
     if (!ENTRIES.includes(`${name}.jsx`)) {
       throw new Error(`index.html loads ${name}.jsx, which is not in ENTRIES - add it to build.mjs`);
     }
-    return `\n<script src="${name}.js"></script>`;
+    return `\n<script src="${hashedName[`${name}.js`]}"></script>`;
   },
 );
 if (/text\/babel/.test(html)) throw new Error("A text/babel script survived");
+// Guard against an unhashed reference slipping through - that is exactly how a
+// deploy ends up serving a stale bundle from cache.
+for (const plain of Object.keys(hashedName)) {
+  if (html.includes(`"${plain}"`)) throw new Error(`index.html still references unhashed ${plain}`);
+}
+if (html.includes('"styles.css"')) throw new Error("index.html still references unhashed styles.css");
 
 writeFileSync(join(dist, "index.html"), html);
 console.log(`  index.html -> ${kb(Buffer.byteLength(html))}`);
