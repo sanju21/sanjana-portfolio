@@ -111,15 +111,15 @@ const Navbar = () => {
   return (
     <nav className="absolute top-0 left-0 right-0 z-20 px-4 sm:px-6 py-4 sm:py-5">
       <div className="max-w-[88rem] mx-auto flex items-center justify-between gap-3">
-        <div className="flex items-center gap-2 min-w-0">
-          <span className="text-xl sm:text-2xl font-medium tracking-tight text-black truncate">Sanjana Rane</span>
-        </div>
         <div className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <a key={l} href={`#${l.toLowerCase()}`} onClick={go(l.toLowerCase())} className="text-base text-gray-700 hover:text-black font-medium transition-colors duration-200 py-2">{l}</a>
           ))}
         </div>
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+        {/* ml-auto keeps the actions right-aligned now the wordmark is gone -
+            without it, justify-between would pull them left on mobile where
+            the links are hidden and these are the only child. */}
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0 ml-auto">
           <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"
             className="w-10 h-10 rounded-full flex items-center justify-center text-gray-700 hover:text-black hover:bg-black/5 transition-colors duration-200">
             <LinkedInIcon className="w-5 h-5" />
