@@ -105,7 +105,7 @@ const ContactSection = () => (
             Let's build the<br />next campaign.
           </h2>
           <p className="text-white/70 text-base md:text-lg max-w-md mb-8 leading-relaxed" style={{ fontFamily: "'Inter', ui-sans-serif, system-ui, sans-serif" }}>
-            Based in Bengaluru, India · Open to relocating to the UAE.
+            Based in Bengaluru, India
           </p>
           {/* On phones these stack; flex-wrap alone left them ragged because each
               kept its natural width, so go full-width and centred below sm. */}
