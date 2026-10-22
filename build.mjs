@@ -10,6 +10,7 @@
 //   2. Builds a Tailwind stylesheet     -> removes the CDN runtime (398 KB)
 //   3. Rewrites index.html to point at React production builds (saves ~1 MB)
 //   4. Copies assets/ through untouched
+//   5. Copies standalone pages (e.g. huawei.html) through untouched
 //
 // tweaks-panel.jsx stays in the output: App() calls useTweaks() and renders
 // <TweaksPanel>, so removing it would break the page. It is 24 KB and renders
@@ -131,6 +132,16 @@ console.log(`  index.html -> ${kb(Buffer.byteLength(html))}`);
 if (existsSync(join(root, "assets"))) {
   cpSync(join(root, "assets"), join(dist, "assets"), { recursive: true });
   console.log("  copied assets/");
+}
+
+// ------------------------------------------------------------------ 5. pages
+// Self-contained pages with inline CSS/JS and no .jsx - nothing to compile.
+// Vercel serves only dist/, so a page missing here would 404 in production.
+const PAGES = ["huawei.html"];
+for (const page of PAGES) {
+  if (!existsSync(join(root, page))) throw new Error(`${page} is listed in PAGES but missing`);
+  cpSync(join(root, page), join(dist, page));
+  console.log(`  copied ${page}`);
 }
 
 console.log("build ok");

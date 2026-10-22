@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ececeb">
+<link rel="icon" href="assets/petal/petal-logo.png">
+<title>Petal Search 2020 — Launch &amp; Campaigns</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<script>
+document.documentElement.classList.add("entrance-active");
+window.__entranceFailsafe=setTimeout(()=>document.documentElement.classList.remove("entrance-active"),3200);
+</script>
+<style>
+:root{--paper:#ececeb;--ink:#222222;--copy:#4a4a4a;--glass-line:rgba(255,255,255,.36);--card-ref-w:429;--card-ref-h:554;--card-radius:17;--card-count:2;--gap:clamp(8px,1.5vw,23px);--gutter:clamp(14px,3.6vw,54px);--content-max:calc(var(--card-count) * var(--card-ref-w) * 1px + (var(--card-count) - 1) * var(--gap));--pad-top:clamp(20px,9.6vh,94px);--pad-bottom:clamp(16px,3vh,52px);--masthead-gap:clamp(16px,3vw,40px);--cards-offset:clamp(14px,9.4vh,92px)}
+*{box-sizing:border-box}
+html,body{margin:0;min-width:100%}
+body{color:var(--ink);background:var(--paper);font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-optical-sizing:auto;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+button,a{font:inherit}
+a{color:var(--ink)}a:hover{color:#ad314d}
+.stage{position:relative;isolation:isolate;display:flex;flex-direction:column;height:100svh;overflow:hidden;padding:var(--pad-top) var(--gutter) var(--pad-bottom);background:linear-gradient(rgba(236,236,234,.10),rgba(236,236,234,.10)),url("https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/5c3ec08f-2dbf-4c0a-8588-f6106a789443.webp") center/cover no-repeat,#ececeb}
+.stage-motion{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.stage-motion--narrow{display:none}
+.paper-texture{position:absolute;z-index:-1;inset:0;display:none}
+.filter-defs{position:absolute;width:0;height:0;overflow:hidden}
+.masthead,.cards{width:min(100%,var(--content-max));margin-inline:auto}
+.masthead{width:min(100%,calc(3 * 429px + 2 * var(--gap)))}
+.masthead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,clamp(260px,32vw,483px));gap:var(--masthead-gap);align-items:start;z-index:2;flex:0 0 auto;position:relative}
+.headline-wrap{display:flex;flex-direction:column;gap:clamp(10px,1.6vh,18px);min-width:0}
+.brand-mark{display:flex;align-items:center;gap:10px;color:#202020;font-size:clamp(14px,1.1vw,17px);font-weight:600;letter-spacing:-.01em}
+.brand-logo{flex:0 0 auto;width:1.1em;height:1.1em;margin-right:.3em;border-radius:22%;background:#fff;padding:.06em;box-shadow:0 1px 3px rgba(50,28,39,.12)}
+.brand-mark img{width:clamp(28px,2.4vw,40px);height:auto;aspect-ratio:1;border-radius:22%;background:#fff;padding:3px;box-shadow:0 1px 3px rgba(50,28,39,.12)}
+.headline{margin:0;max-width:100%;color:#202020;font-size:clamp(24px,min(3.1vw,5.9vh),47px);font-weight:400;letter-spacing:.015em;line-height:1.223}
+.headline__line{display:flex;flex-wrap:nowrap;align-items:center;white-space:pre}
+.dot-word{display:inline-block;flex:0 0 auto;width:4.851em;height:.766em;margin-left:.319em;color:#ad314d;transform:translateY(.085em)}
+.dot-svg{display:block;overflow:visible;color:inherit;width:100%;height:100%}
+.intro{container-type:inline-size;width:100%;margin:.34em 0 0;color:var(--copy);font-size:clamp(13px,min(1.36vw,2.6vh),20.6px);font-weight:400;letter-spacing:-.017em;line-height:1.62}
+.desktop-break{display:none}
+@container (min-width:26.5em){.desktop-break{display:inline}}
+.cards{flex:1 1 auto;container-type:size;display:flex;justify-content:center;align-items:center;gap:var(--gap);min-height:0;margin-top:var(--cards-offset);--card-w:min((100cqw - (var(--card-count) - 1) * var(--gap)) / var(--card-count),100cqh * var(--card-ref-w) / var(--card-ref-h),var(--card-ref-w) * 1px)}
+.card{container-type:inline-size;position:relative;flex:0 0 auto;overflow:hidden;width:var(--card-w);aspect-ratio:429/554;border:1px solid var(--glass-line);border-radius:calc(var(--card-w) * 17 / 429);background-origin:border-box;color:#fff;box-shadow:0 2px 4px rgba(50,28,39,.30),inset 0 1px 0 rgba(255,255,255,.24)}
+.card>*{--u:calc(100cqw / 429)}
+.card__media{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:fill;pointer-events:none}
+.card::before{content:"";position:absolute;inset:0;z-index:1;mix-blend-mode:screen;pointer-events:none;background:linear-gradient(102deg,rgba(255,255,255,.10),transparent 28%,rgba(255,255,255,.08) 62%,transparent 88%),radial-gradient(ellipse 85% 34% at 54% 7%,rgba(255,255,255,.24),transparent 72%)}
+.card__grain{position:absolute;z-index:2;inset:-8%;width:116%;height:116%;opacity:.46;mix-blend-mode:soft-light;pointer-events:none}
+.card--speed{background:radial-gradient(ellipse 34% 24% at 50% 2%,rgba(255,220,211,.10) 0%,transparent 76%),radial-gradient(ellipse 44% 34% at 106% 20%,rgba(255,222,211,.10) 0%,transparent 74%),radial-gradient(ellipse 40% 27% at 50% 82%,rgba(255,214,208,.08) 0%,transparent 74%),radial-gradient(ellipse 43% 31% at -7% 61%,rgba(127,31,53,.06) 0%,transparent 74%),radial-gradient(ellipse 47% 34% at 107% 82%,rgba(119,29,49,.07) 0%,transparent 74%),linear-gradient(180deg,rgba(255,246,241,.43) 0%,rgba(255,237,235,.19) 9%,transparent 22%),radial-gradient(ellipse 44% 34% at 50% 111%,rgba(55,0,20,.16) 0%,transparent 74%),radial-gradient(ellipse 105% 32% at 50% 80%,rgba(255,218,204,.20) 0%,rgba(255,205,196,.10) 48%,transparent 78%),radial-gradient(ellipse 55% 22% at -5% 39%,rgba(240,250,200,.15) 0%,transparent 76%),radial-gradient(ellipse 64% 49% at -8% 106%,rgba(255,222,199,.48) 0%,rgba(255,204,192,.25) 49%,transparent 78%),radial-gradient(ellipse 64% 49% at 108% 106%,rgba(255,222,199,.43) 0%,rgba(255,204,192,.22) 49%,transparent 78%),radial-gradient(ellipse 52% 54% at -8% 44%,rgba(255,216,207,.20) 0%,transparent 77%),radial-gradient(ellipse 68% 45% at -4% -3%,rgba(255,235,232,.73) 0%,rgba(255,226,226,.41) 46%,transparent 77%),radial-gradient(ellipse 70% 45% at 104% -4%,rgba(255,238,233,.78) 0%,rgba(255,226,226,.42) 48%,transparent 78%),radial-gradient(ellipse 93% 47% at 106% 58%,rgba(245,247,241,.73) 0%,rgba(246,231,229,.42) 48%,transparent 76%),radial-gradient(ellipse 74% 40% at -8% 73%,rgba(255,210,190,.48) 0%,rgba(255,194,181,.25) 48%,transparent 77%),radial-gradient(ellipse 77% 36% at 57% 58%,rgba(255,226,218,.30) 0%,rgba(255,206,207,.15) 50%,transparent 78%),radial-gradient(ellipse 54% 30% at 50% 17%,rgba(106,8,51,.22) 0%,transparent 78%),linear-gradient(180deg,#bd4468 0%,#ad355b 38%,#a63b50 72%,#8c1320 100%);background-origin:border-box}
+.card--speed::before{background:linear-gradient(103deg,rgba(255,255,255,.08),transparent 31%,rgba(255,255,255,.055) 63%,transparent 88%),radial-gradient(ellipse 92% 19% at 51% 0%,rgba(255,255,255,.08),transparent 78%)}
+.card--speed .card__grain{opacity:.54}
+.card--context{background:radial-gradient(ellipse 118% 66% at 48% -8%,rgba(221,232,255,.065),transparent 74%),radial-gradient(ellipse 106% 52% at 48% 112%,rgba(255,155,139,.075),transparent 73%),radial-gradient(ellipse 82% 15% at 50% 29%,rgba(240,204,244,.24),transparent 81%),radial-gradient(ellipse 64% 18% at 50% 61%,rgba(239,177,208,.17),transparent 81%),radial-gradient(ellipse 43% 42% at -5% 30%,rgba(228,220,255,.53),transparent 78%),radial-gradient(ellipse 43% 42% at 105% 30%,rgba(245,200,210,.54),transparent 78%),radial-gradient(ellipse 70% 48% at 70% 110%,rgba(238,204,201,.62),transparent 77%),radial-gradient(ellipse 70% 23% at 78% 1%,rgba(251,208,226,.56),transparent 78%),radial-gradient(ellipse 78% 25% at 15% 8%,rgba(218,211,255,.54),transparent 79%),radial-gradient(ellipse 38% 31% at 80% 90%,rgba(230,190,191,.38),transparent 74%),radial-gradient(ellipse 45% 26% at 47% 78%,rgba(236,184,183,.45),transparent 73%),linear-gradient(164deg,#c9b5e1 0%,#ad80ca 29%,#9d4f72 64%,#793246 100%);background-origin:border-box}
+.card--context::before{mix-blend-mode:multiply;opacity:.54;background:radial-gradient(ellipse 18% 23% at 20% 32%,rgba(103,41,148,.24),transparent 76%),radial-gradient(ellipse 20% 24% at 81% 30%,rgba(121,34,113,.22),transparent 76%),radial-gradient(ellipse 66% 9% at 50% 30%,rgba(103,33,125,.26),transparent 82%),radial-gradient(ellipse 68% 8% at 50% 69%,rgba(86,27,64,.23),transparent 83%),linear-gradient(103deg,rgba(255,255,255,.08),transparent 31%,rgba(255,255,255,.05) 63%,transparent 88%)}
+.card--context .card__grain{opacity:.68}
+.card--connections{background:radial-gradient(ellipse 54% 14% at 56% 0%,rgba(255,206,190,.16),transparent 76%),radial-gradient(ellipse 38% 24% at 102% 8%,rgba(255,190,164,.24),transparent 75%),radial-gradient(ellipse 28% 24% at -5% 66%,rgba(255,192,174,.30),transparent 74%),radial-gradient(ellipse 46% 30% at 104% 32%,rgba(255,146,52,.42),transparent 74%),radial-gradient(ellipse 80% 36% at 62% 57%,rgba(255,141,36,.62),transparent 72%),radial-gradient(ellipse 58% 30% at 6% 103%,rgba(199,49,45,.38),transparent 76%),radial-gradient(ellipse 60% 32% at 97% 101%,rgba(190,40,44,.42),transparent 76%),linear-gradient(177deg,#d84736 0%,#dd523c 24%,#e8703d 52%,#de5641 78%,#d34239 100%);background-origin:border-box}
+.card--connections::before{background:linear-gradient(102deg,rgba(255,255,255,.07),transparent 30%,rgba(255,255,255,.05) 62%,transparent 88%),radial-gradient(ellipse 84% 26% at 54% 4%,rgba(255,255,255,.11),transparent 74%)}
+.card--connections .card__grain{opacity:.58}
+.card__title{position:absolute;z-index:4;top:6.1%;left:5%;width:90%;margin:0;color:rgba(255,255,255,.96);font-size:calc(22.95 * var(--u));font-weight:600;letter-spacing:0;line-height:1.48;text-align:center;text-shadow:0 1px 1px rgba(72,28,48,.14)}
+.card--speed .card__title{top:6.3%;color:#fff;font-size:calc(22.7 * var(--u))}
+.card--context .card__title{font-size:calc(23 * var(--u));line-height:1.48}
+.gauge{position:absolute;z-index:2;top:27.63%;left:10.5%;width:79%;height:59%;overflow:visible}
+.tick{stroke:rgba(255,188,210,.34)}
+.metric{position:absolute;z-index:5;left:0;width:100%;display:flex;align-items:flex-end;justify-content:center;color:rgba(255,255,255,.97);filter:drop-shadow(0 1px 1px rgba(104,27,54,.08))}
+.dot-number{display:block;flex:0 0 auto}
+.dot-number .dot-svg{height:auto}
+.metric__unit{margin-left:1.3%;font-size:calc(30.46 * var(--u));font-weight:400;line-height:1;letter-spacing:calc(-.8 * var(--u))}
+.metric--speed{top:48.6%}
+.metric--speed .dot-number{width:31.2%}
+.metric--speed .dot-svg{transform:translate(calc(4 * var(--u)),calc(2 * var(--u))) scale(.925,1.018);transform-origin:left top}
+.metric--speed .metric__unit{margin-left:1%;font-size:calc(30.6 * var(--u));transform:translateY(calc(5 * var(--u)))}
+.metric--context{top:48%;transform:translateX(2.1cqw)}
+.metric--context .dot-number{width:30.5%}
+.metric--context .dot-svg{transform:translate(calc(-1 * var(--u)),calc(-.5 * var(--u))) scale(.96,1.02);transform-origin:center}
+.metric--connections{top:48.5%;transform:translateX(2.1cqw)}
+.metric--connections .dot-number{width:23%}
+.caption{position:absolute;z-index:5;top:65.1%;left:10%;width:80%;margin:0;color:rgba(255,255,255,.87);font-size:calc(19.95 * var(--u));font-weight:400;letter-spacing:calc(-.36 * var(--u));line-height:1.45;text-align:center;text-shadow:0 1px 2px rgba(60,21,35,.16)}
+.card--speed .caption{top:64.75%;font-size:calc(20.33 * var(--u))}
+.card--context .caption{top:65.72%;color:rgba(255,255,255,.84);font-size:calc(19.1 * var(--u));letter-spacing:calc(-.28 * var(--u));line-height:1.38}
+.learn-more{position:absolute;z-index:6;top:83.75%;left:50%;width:calc(111 * var(--u));height:calc(45 * var(--u));transform:translateX(-50%);border:0;border-radius:999px;color:#2d2d2d;background:rgba(255,255,255,.97);box-shadow:0 1px 0 rgba(255,255,255,.50) inset,0 1px 3px rgba(58,25,39,.08);font-size:calc(14 * var(--u));font-weight:400;letter-spacing:calc(-.25 * var(--u));display:flex;align-items:center;justify-content:center;text-decoration:none;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
+.card--speed .learn-more{top:83.9%;height:calc(44 * var(--u))}
+.card--context .learn-more{top:83.9%;height:calc(44 * var(--u))}
+.learn-more:hover{color:#2d2d2d;transform:translateX(-50%) translateY(calc(-2 * var(--u)));box-shadow:0 8px 20px rgba(58,25,39,.16)}
+.learn-more:focus-visible{outline:3px solid rgba(255,255,255,.78);outline-offset:3px}
+.context-glow{position:absolute;inset:0;z-index:0;pointer-events:none}
+.context-backdrop{position:absolute;inset:0;width:100%;height:100%;-webkit-mask:linear-gradient(180deg,#000 0%,#000 54%,rgba(0,0,0,.72) 58%,rgba(0,0,0,.18) 62%,transparent 65%);mask:linear-gradient(180deg,#000 0%,#000 54%,rgba(0,0,0,.72) 58%,rgba(0,0,0,.18) 62%,transparent 65%)}
+.context-window{position:absolute;z-index:3;top:32.4%;left:20.4%;width:59%;height:30.1%;overflow:hidden;border:none;border-radius:calc(10 * var(--u));background:linear-gradient(0deg,rgba(255,255,255,.30) 0%,rgba(255,255,255,.15) 45%,rgba(255,255,255,0) 80%),linear-gradient(270deg,rgba(213,62,152,.62) 0px,rgba(213,62,152,0) calc(5 * var(--u))),radial-gradient(ellipse 118% 70% at 60% 8%,rgba(255,203,252,.34),transparent 74%),linear-gradient(105deg,rgba(250,232,250,.72) 0%,rgba(238,120,214,.68) 51%,rgba(222,86,177,.82) 100%);box-shadow:0 calc(13 * var(--u)) calc(25 * var(--u)) rgba(70,17,69,.31),inset 0 1px 0 rgba(255,255,255,.12);-webkit-backdrop-filter:blur(calc(9 * var(--u))) saturate(1.08);backdrop-filter:blur(calc(9 * var(--u))) saturate(1.08)}
+.context-window__grain{position:absolute;inset:0;width:100%;height:100%;opacity:.24;mix-blend-mode:soft-light}
+.window-lines{position:absolute;top:9%;left:6.7%;width:87%;height:24%;display:flex;flex-direction:column}
+.window-lines span{display:block;border-radius:calc(6 * var(--u))}
+.window-lines span:nth-child(1){height:calc(6 * var(--u));border-radius:calc(2.5 * var(--u));background:rgba(255,255,255,.72);width:29%;margin-bottom:calc(3 * var(--u))}
+.window-lines span:nth-child(2),.window-lines span:nth-child(3){height:calc(22 * var(--u));background:linear-gradient(90deg,rgba(255,240,253,.72),rgba(255,170,242,.75) 42%,rgba(255,108,235,.78))}
+.window-lines span:nth-child(2){width:100%}
+.window-lines span:nth-child(3){width:86%;margin-top:calc(3 * var(--u));opacity:.64}
+.connections-map{position:absolute;z-index:2;top:21.7%;left:0;width:100%;height:43%;opacity:.78;-webkit-mask:linear-gradient(180deg,#000 0%,#000 50%,rgba(0,0,0,.46) 67%,rgba(0,0,0,.15) 83%,transparent 96%);mask:linear-gradient(180deg,#000 0%,#000 50%,rgba(0,0,0,.46) 67%,rgba(0,0,0,.15) 83%,transparent 96%)}
+.work{padding:clamp(56px,10vh,120px) var(--gutter) clamp(56px,10vh,120px)}
+.work__inner{width:min(100%,var(--content-max));margin-inline:auto;display:flex;flex-direction:column;gap:clamp(48px,8vh,96px)}
+.work__head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,clamp(260px,32vw,483px));gap:var(--masthead-gap);align-items:end}
+.work__title{margin:0;color:#202020;font-size:clamp(28px,3.1vw,47px);font-weight:400;letter-spacing:.015em;line-height:1.223}
+.work__lede{margin:0;color:var(--copy);font-size:clamp(14px,1.36vw,20px);letter-spacing:-.017em;line-height:1.62}
+.timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);margin:0;padding:0;list-style:none}
+.timeline li{display:flex;flex-direction:column;gap:10px;padding:20px 20px 22px;border-radius:17px;background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.8);box-shadow:0 2px 4px rgba(50,28,39,.06)}
+.timeline__date{font-size:13px;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
+.timeline li:nth-child(1) .timeline__date{color:#ad355b}.timeline li:nth-child(2) .timeline__date{color:#9d4f72}.timeline li:nth-child(3) .timeline__date{color:#b8452f}.timeline li:nth-child(4) .timeline__date{color:#c0392b}
+.timeline p{margin:0;color:var(--copy);font-size:14px;line-height:1.55;text-wrap:pretty}
+.milestones{display:flex;flex-direction:column;gap:20px}
+.milestones__head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.milestones__title{margin:0;color:#202020;font-size:clamp(20px,1.6vw,24px);font-weight:600}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.links a{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:#202020;color:#fff;font-size:14px;text-decoration:none;transition:background .18s ease}
+.links a:hover{background:#ad355b;color:#fff}
+@media (max-width:1100px){.timeline{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.step{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:var(--gap);align-items:start}
+.step__text{position:sticky;top:32px;display:flex;flex-direction:column;gap:12px;padding-top:4px}
+.step__num{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;color:#fff;font-size:14px;font-weight:600}
+.step--1 .step__num{background:#ad355b}.step--2 .step__num{background:#9d4f72}.step--3 .step__num{background:#dd523c}.step--4 .step__num{background:#7a5fb0}.step--5 .step__num{background:#c0392b}
+.regions{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.regions__label{color:#202020;font-size:13px;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
+.regions__list{display:flex;flex-wrap:wrap;gap:8px}
+.regions__list span{padding:8px 16px;border-radius:999px;background:#fff;border:1px solid rgba(157,79,114,.35);color:#7a2f55;font-size:14px;font-weight:600;letter-spacing:.04em}
+.step--6 .step__num{background:#b8452f}
+.pair.pair--wide{max-width:none}
+.slot{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:16px;background:repeating-linear-gradient(135deg,#f3eef0 0 10px,#ebe4e8 10px 20px)}
+.slot span{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#7a5a68;text-align:center}
+.pair.pair--ny{grid-template-columns:minmax(0,2.1fr) minmax(0,1fr)}
+.step--7 .step__num{background:#2f6f8f}.step--8 .step__num{background:#d0477a}.step--9 .step__num{background:#5b5fc7}
+.shot--contain img{max-height:720px;width:auto;max-width:100%;margin-inline:auto}
+.qa{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap)}
+.qa li{padding:20px 22px;border-radius:17px;background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.85);box-shadow:0 2px 4px rgba(50,28,39,.06)}
+.qa h4{margin:0 0 6px;color:#202020;font-size:16px;font-weight:600}
+.qa p{margin:0;color:var(--copy);font-size:14px;line-height:1.55;text-wrap:pretty}
+.tools{display:flex;flex-direction:column;gap:20px}
+.tools__list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.tools__list li{display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:17px;background:#fff;box-shadow:0 2px 4px rgba(50,28,39,.06),0 12px 28px rgba(50,28,39,.06)}
+.tools__list strong{display:block;color:#202020;font-size:16px;font-weight:600}
+.tools__list li span:not(.tools__mark){display:block;color:var(--copy);font-size:13px;margin-top:2px}
+.tools__mark{flex:0 0 auto;width:48px;height:48px;border-radius:12px;background:#fff;border:1px solid rgba(0,0,0,.08);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.tools__mark img{width:32px;height:32px;object-fit:contain}
+.tools__mark--text{background:#ad355b;border-color:#ad355b;color:#fff;font-weight:700;font-size:16px}
+@media (max-width:900px){.qa,.tools__list{grid-template-columns:minmax(0,1fr)}}
+.card{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .25s ease,box-shadow .25s ease}
+.card.is-hover{transition:transform .08s linear,box-shadow .25s ease;box-shadow:0 18px 40px rgba(50,28,39,.28),inset 0 1px 0 rgba(255,255,255,.24)}
+.card::after{content:"";position:absolute;inset:0;z-index:7;pointer-events:none;opacity:0;transition:opacity .3s ease;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.28),transparent 45%);mix-blend-mode:soft-light}
+.card.is-hover::after{opacity:1}
+.card__flip{position:absolute;z-index:9;top:calc(18 * var(--u));right:calc(18 * var(--u));width:calc(36 * var(--u));height:calc(36 * var(--u));border-radius:999px;border:1px solid rgba(255,255,255,.6);background:rgba(255,255,255,.18);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#fff;font-size:calc(20 * var(--u));line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .35s cubic-bezier(.16,1,.3,1),background .2s ease}
+.card__flip:hover{background:rgba(255,255,255,.34)}
+.card.is-flipped .card__flip{transform:rotate(45deg);background:#fff;color:#2d2d2d}
+.card__back{position:absolute;z-index:8;left:calc(14 * var(--u));right:calc(14 * var(--u));bottom:calc(14 * var(--u));padding:calc(26 * var(--u));border-radius:calc(14 * var(--u));background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#2d2d2d;transform:translateY(calc(100% + 20 * var(--u)));opacity:0;transition:transform .5s cubic-bezier(.16,1,.3,1),opacity .3s ease;box-shadow:0 10px 30px rgba(58,25,39,.2)}
+.card.is-flipped .card__back{transform:none;opacity:1}
+.card__back-label{display:block;font-size:calc(12 * var(--u));font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#ad355b;margin-bottom:calc(12 * var(--u))}
+.card--context .card__back-label{color:#9d4f72}
+.card__back ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:calc(10 * var(--u))}
+.card__back li{position:relative;padding-left:calc(18 * var(--u));font-size:calc(16 * var(--u));line-height:1.4}
+.card__back li::before{content:"";position:absolute;left:0;top:.5em;width:calc(7 * var(--u));height:calc(7 * var(--u));border-radius:999px;background:currentColor;opacity:.5}
+.card__chips{display:flex;flex-wrap:wrap;gap:calc(6 * var(--u));margin-top:calc(16 * var(--u))}
+.card__chips span{padding:calc(5 * var(--u)) calc(12 * var(--u));border-radius:999px;border:1px solid rgba(157,79,114,.35);font-size:calc(12 * var(--u));font-weight:600;color:#7a2f55}
+.ticker{overflow:hidden;margin:0 calc(-1 * var(--gutter)) clamp(40px,7vh,72px);padding:14px 0;border-block:1px solid rgba(0,0,0,.08);-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.ticker__track{display:flex;width:max-content;animation:ticker 36s linear infinite}
+.ticker:hover .ticker__track{animation-play-state:paused}
+.ticker span{display:flex;align-items:center;gap:28px;padding-right:28px;color:#202020;font-size:clamp(18px,1.8vw,28px);letter-spacing:-.01em;white-space:nowrap}
+.ticker span::after{content:"";width:8px;height:8px;border-radius:999px;background:#ad355b}
+@keyframes ticker{to{transform:translateX(-50%)}}
+.timeline li,.qa li,.tools__list li{transition:transform .25s ease,box-shadow .25s ease}
+.timeline li:hover,.qa li:hover,.tools__list li:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(50,28,39,.12)}
+.shot{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease}
+.shot img{transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.shot:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(50,28,39,.10),0 26px 50px rgba(50,28,39,.16)}
+.shot:hover img{transform:scale(1.03)}
+.reveal{opacity:0;translate:0 24px;transition:opacity .7s cubic-bezier(.22,1,.36,1),translate .7s cubic-bezier(.22,1,.36,1)}
+.reveal.is-in{opacity:1;translate:none}
+@media (prefers-reduced-motion:reduce){.ticker__track{animation:none}.reveal{opacity:1;translate:none}.card{transform:none}}
+.stage{justify-content:center;height:auto;min-height:100svh;overflow:visible}
+.hero{position:relative;z-index:2;width:min(100%,1320px);margin-inline:auto;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.25fr);gap:clamp(24px,4vw,64px);align-items:center;flex:1 1 auto;min-height:0}
+.hero__copy{display:flex;flex-direction:column;align-items:flex-start;gap:clamp(14px,2.4vh,24px)}
+.hero__eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.9);color:#4a4a4a;font-size:13px;font-weight:500;letter-spacing:.01em;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.hero__dot{width:8px;height:8px;border-radius:999px;background:#ad355b;box-shadow:0 0 0 4px rgba(173,53,91,.18);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(173,53,91,0)}}
+.hero__title{font-size:clamp(32px,min(4.2vw,7vh),64px);font-weight:600;letter-spacing:-.035em;line-height:1.02}
+.hero__title em{font-style:normal;background:linear-gradient(100deg,#ad355b,#9d4f72 45%,#dd523c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero__title .brand-logo{width:.9em;height:.9em;margin-right:.22em}
+.hero__intro{font-size:clamp(15px,min(1.3vw,2.4vh),19px);max-width:36em;margin:0}
+.hero__ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero__btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;background:rgba(255,255,255,.85);border:1px solid rgba(0,0,0,.06);color:#202020;font-size:15px;font-weight:500;text-decoration:none;box-shadow:0 1px 2px rgba(50,28,39,.08);transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.hero__btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(50,28,39,.14);color:#202020}
+.hero__btn--primary{background:#202020;color:#fff;border-color:#202020}
+.hero__btn--primary:hover{background:#ad355b;border-color:#ad355b;color:#fff}
+.hero__stats{display:flex;flex-wrap:wrap;gap:clamp(20px,3vw,44px);margin:clamp(4px,1vh,12px) 0 0;padding-top:clamp(14px,2.4vh,22px);border-top:1px solid rgba(0,0,0,.1)}
+.hero__stats div{display:flex;flex-direction:column;gap:2px}
+.hero__stats dt{font-size:clamp(28px,min(3vw,5vh),44px);font-weight:600;letter-spacing:-.03em;color:#202020;line-height:1}
+.hero__stats dd{margin:0;color:#4a4a4a;font-size:13px}
+.hero__visual{position:relative;min-width:0}
+.hero__frame{margin:0;border-radius:24px;overflow:hidden;background:#fff;border:1px solid rgba(255,255,255,.9);box-shadow:0 30px 60px rgba(50,28,39,.18),0 2px 6px rgba(50,28,39,.08);transform:perspective(1200px) rotateY(-6deg) rotateX(2deg);transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.hero__visual:hover .hero__frame{transform:none}
+.hero__frame img{display:block;width:100%;height:auto;max-height:72vh;object-fit:cover}
+.hero__chip{position:absolute;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#202020;font-size:14px;font-weight:600;box-shadow:0 10px 24px rgba(50,28,39,.14);white-space:nowrap;animation:float 6s ease-in-out infinite}
+.hero__chip::before{content:"";display:inline-block;width:8px;height:8px;border-radius:999px;margin-right:8px;vertical-align:middle}
+.hero__chip--a{top:-14px;left:8%}.hero__chip--a::before{background:#ad355b}
+.hero__chip--b{bottom:18%;left:-18px;animation-delay:-2s}.hero__chip--b::before{background:#9d4f72}
+.hero__chip--c{bottom:-16px;right:8%;animation-delay:-4s}.hero__chip--c::before{background:#dd523c}
+@keyframes float{50%{translate:0 -8px}}
+.entrance-active .hero__eyebrow,.entrance-active .hero__ctas,.entrance-active .hero__stats{animation:support-reveal .72s cubic-bezier(.22,1,.36,1) .35s both}
+.entrance-active .hero__stats{animation-delay:.45s}
+.entrance-active .hero__visual{animation:card-establish .9s cubic-bezier(.16,1,.3,1) .4s both}
+@media (max-width:900px){.hero{grid-template-columns:minmax(0,1fr)}.hero__chip--b{left:6px}.hero__frame{transform:none}}
+@media (prefers-reduced-motion:reduce){.hero__chip,.hero__dot{animation:none}}
+.back-link{position:absolute;top:20px;left:var(--gutter);z-index:5;display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.85);color:#202020;font-size:14px;font-weight:500;text-decoration:none;box-shadow:0 1px 3px rgba(50,28,39,.1)}.back-link:hover{background:#fff;color:#ad355b}
+.stack{display:flex;flex-direction:column;gap:var(--gap)}
+.pair.pair--quad{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);align-items:start}
+.timeline__link{margin-top:auto;color:#9d4f72;font-size:13px;font-weight:600;text-decoration:none}.timeline__link:hover{color:#ad355b;text-decoration:underline}
+@media (max-width:1100px){.pair.pair--quad{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.pair.pair--even{grid-template-columns:repeat(2,minmax(0,1fr));max-width:640px}
+.shot--tall img{aspect-ratio:9/17;object-fit:cover;object-position:top}
+.step__title{margin:0;color:#202020;font-size:clamp(22px,2vw,30px);font-weight:600;letter-spacing:-.01em;line-height:1.25}
+.step__copy{margin:0;color:var(--copy);font-size:clamp(14px,1.1vw,17px);line-height:1.6;max-width:34ch;text-wrap:pretty}
+.shot{margin:0;border-radius:17px;overflow:hidden;background:#fff;border:1px solid rgba(255,255,255,.6);box-shadow:0 2px 4px rgba(50,28,39,.10),0 18px 40px rgba(50,28,39,.10)}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{padding:12px 16px;color:var(--copy);font-size:13px;letter-spacing:-.01em;border-top:1px solid rgba(0,0,0,.06)}
+.pair{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:var(--gap);align-items:start}
+.gallery{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(0,1fr) minmax(0,1fr);gap:var(--gap);align-items:start}
+.gallery .shot--tall img{aspect-ratio:9/19;object-fit:cover;object-position:top}
+@media (max-width:767px){.pair.pair--quad{grid-template-columns:repeat(2,minmax(0,1fr))}.timeline,.work__head,.step,.pair:not(.pair--quad),.gallery{grid-template-columns:minmax(0,1fr)}.step__text{position:static}.gallery .shot--tall img{aspect-ratio:auto}}
+@media (min-width:768px) and (max-width:1180px) and (max-aspect-ratio:6/7){
+.cards{display:grid;grid-template-columns:repeat(2,max-content);justify-content:center;align-content:center;--card-w:min((100cqw - var(--gap)) / 2,(100cqh - var(--gap)) / 2 * 429 / 554,429px)}
+
+}
+@media (max-width:767px){
+html,body{height:auto;overflow:visible}
+.stage{height:auto;min-height:100svh;overflow:visible;background:linear-gradient(rgba(236,236,234,.08),rgba(236,236,234,.08)),url("https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/0f4926a4-e660-4df2-9195-2bfb3e341bdd.webp") center top/100% 100% no-repeat,#e8e8e8}
+.stage-motion--wide{display:none}
+.stage-motion--narrow{display:block}
+.masthead{grid-template-columns:minmax(0,1fr)}
+.cards{container-type:inline-size;flex:0 0 auto;flex-direction:column;align-items:center;--card-w:min(100cqw,429px)}
+.card,.card:nth-child(2),.card:nth-child(3){--entrance-delay:.40s}
+}
+@keyframes headline-reveal{from{opacity:0;translate:0 .52em;clip-path:inset(0 0 56% 0)}to{opacity:1;translate:none;clip-path:inset(-8% -2% -8% -2%)}}
+@keyframes support-reveal{from{opacity:0;translate:0 8px}to{opacity:1;translate:none}}
+@keyframes card-establish{from{opacity:.52;translate:0 10px;scale:.985}to{opacity:1;translate:none;scale:none}}
+@keyframes card-title-reveal{from{opacity:0;translate:0 calc(8 * var(--u));clip-path:inset(0 0 48% 0)}to{opacity:1;translate:none;clip-path:inset(-8% -2% -8% -2%)}}
+@keyframes gauge-resolve{from{opacity:0;translate:0 calc(9 * var(--u));scale:.972;clip-path:inset(0 7% 18% 7%)}to{opacity:1;translate:none;scale:none;clip-path:inset(-3%)}}
+@keyframes panel-resolve{from{opacity:0;translate:0 calc(10 * var(--u));scale:.972;clip-path:inset(8% 4% 8% 4%)}to{opacity:1;translate:none;scale:none;clip-path:inset(-3%)}}
+@keyframes network-resolve{from{opacity:0;translate:0 calc(6 * var(--u));clip-path:inset(45% 0 45% 0)}to{opacity:.78;translate:none;clip-path:inset(0)}}
+@keyframes metric-resolve{from{opacity:0;translate:0 calc(7 * var(--u));scale:.985;filter:blur(2.5px)}to{opacity:1;translate:none;scale:none;filter:none}}
+@keyframes control-settle{from{opacity:0;translate:0 calc(6 * var(--u));scale:.975}to{opacity:1;translate:none;scale:none}}
+.card{--entrance-delay:.46s}.card:nth-child(2){--entrance-delay:.58s}.card:nth-child(3){--entrance-delay:.70s}
+.entrance-active :is(.headline__line,.intro,.card,.card__title,.gauge,.context-window,.connections-map,.metric,.caption,.learn-more){will-change:opacity,translate,scale,clip-path,filter}
+.entrance-active .headline__line{animation:headline-reveal .84s cubic-bezier(.16,1,.3,1) .08s both}
+.entrance-active .headline__line:nth-child(2){animation-delay:.17s}
+.entrance-active .intro{animation:support-reveal .72s cubic-bezier(.22,1,.36,1) .25s both}
+.entrance-active .card{animation:card-establish .76s cubic-bezier(.16,1,.3,1) var(--entrance-delay) both}
+.entrance-active .card__title{animation:card-title-reveal .62s cubic-bezier(.22,1,.36,1) calc(var(--entrance-delay) + .14s) both}
+.entrance-active .gauge{animation:gauge-resolve .82s cubic-bezier(.16,1,.3,1) calc(var(--entrance-delay) + .30s) both}
+.entrance-active .context-window{animation:panel-resolve .82s cubic-bezier(.16,1,.3,1) calc(var(--entrance-delay) + .30s) both}
+.entrance-active .connections-map{animation:network-resolve .82s cubic-bezier(.16,1,.3,1) calc(var(--entrance-delay) + .30s) both}
+.entrance-active .metric{animation:metric-resolve .66s cubic-bezier(.16,1,.3,1) calc(var(--entrance-delay) + .48s) both}
+.entrance-active .caption{animation:support-reveal .54s cubic-bezier(.22,1,.36,1) calc(var(--entrance-delay) + .64s) both}
+.entrance-active .learn-more{animation:control-settle .52s cubic-bezier(.16,1,.3,1) calc(var(--entrance-delay) + .80s) both}
+@media (prefers-reduced-motion:reduce){
+.stage-motion,.card__media{display:none!important}
+.entrance-active *{animation:none!important}
+*{transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<svg class="filter-defs" aria-hidden="true" focusable="false">
+<defs>
+<filter id="cardNoise" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".54" numOctaves="3" seed="27" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix><feComponentTransfer><feFuncR type="linear" slope="1.8" intercept="-.25"></feFuncR><feFuncG type="linear" slope="1.8" intercept="-.25"></feFuncG><feFuncB type="linear" slope="1.8" intercept="-.25"></feFuncB><feFuncA type="table" tableValues="0 .52"></feFuncA></feComponentTransfer></filter>
+<filter id="panelNoiseF" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="13" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter>
+</defs>
+</svg>
+<main class="stage">
+<a class="back-link" href="/">← Back to portfolio</a>
+<video class="stage-motion stage-motion--wide" autoplay muted loop playsinline preload="auto" aria-hidden="true" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/5c3ec08f-2dbf-4c0a-8588-f6106a789443.webp" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260826_125226_45cb4f38-aa7e-47e1-885d-ae0b69745369.mp4"></video>
+<video class="stage-motion stage-motion--narrow" autoplay muted loop playsinline preload="none" aria-hidden="true" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/0f4926a4-e660-4df2-9195-2bfb3e341bdd.webp" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260826_125242_daae1570-386d-4bd5-8896-80499e2371e0.mp4"></video>
+<svg class="paper-texture" aria-hidden="true"><defs><filter id="paperNoise"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" seed="8"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><pattern id="paperFiber" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(17)"><rect width="1" height="6" fill="rgba(0,0,0,.03)"></rect></pattern></defs><rect width="100%" height="100%" filter="url(#paperNoise)" opacity=".2"></rect><rect width="100%" height="100%" fill="url(#paperFiber)"></rect></svg>
+<div class="hero">
+<div class="hero__copy">
+<h1 class="headline hero__title"><span class="headline__line" style="height:61px;width:500px"><img class="brand-logo" src="assets/petal/petal-logo.png" alt="Petal Search logo" width="40" height="40">Petal Search</span><span class="headline__line" style="height:61px;width:500px">Launch &amp; <em style="height:65px">Campaigns</em></span></h1>
+<p class="intro hero__intro">Launching Huawei’s global search engine in international markets after the loss of Google Mobile Services. I took campaigns from keyword search to live, built in WiseOper and delivered across APAC, MENA and LATAM.</p>
+<div class="hero__ctas"><a class="hero__btn hero__btn--primary" href="https://consumer.huawei.com/en/community/details/topicId-124931/" target="_blank" rel="noopener">Learn more<span aria-hidden="true">↗</span></a><a class="hero__btn" href="https://aspiegel.com/en/petal-search" target="_blank" rel="noopener">Visit Petal Search<span aria-hidden="true">↗</span></a></div>
+<dl class="hero__stats">
+<div><dt>3</dt><dd>Launch regions</dd></div>
+<div><dt>8</dt><dd>Workstreams</dd></div>
+<div><dt>4</dt><dd>Years of campaigns</dd></div>
+</dl>
+</div>
+<div class="hero__visual">
+<figure class="hero__frame" style="position:relative"><img src="assets/petal/brand-banner.jpeg" alt="HUAWEI Petal Search"><span class="hero__chip hero__chip--c" style="position:absolute;left:534px;top:299px;width:203px;height:37px">APAC · MENA · LATAM</span></figure>
+<span class="hero__chip hero__chip--a">Keyword search</span>
+<span class="hero__chip hero__chip--b">Campaign Execution</span>
+</div>
+</div>
+</main>
+<section class="work" aria-labelledby="work-title">
+<div class="work__inner">
+<header class="work__head">
+<h2 class="work__title" id="work-title">Inside Petal Search:<br>My Role and Contribution</h2>
+<p class="work__lede">Petal Search is Huawei’s search engine for apps, news, sports, shopping and local services, launched internationally in 2020. My role began with keyword search and expanded into the end-to-end planning and execution of campaigns in WiseOper.</p>
+</header>
+<div class="milestones">
+<div class="milestones__head"><h3 class="milestones__title">Key Milestones</h3><div class="links"><a href="https://aspiegel.com/en/petal-search" target="_blank" rel="noopener">Petal Search ↗</a><a href="https://consumer.huawei.com/en/community/details/topicId-124931/" target="_blank" rel="noopener">AppGallery ↗</a></div></div>
+<ol class="timeline">
+<li><span class="timeline__date">May 2020</span><p>Huawei first introduced Petal Search (originally known as Huawei Search) for international markets to help users find third-party apps and APK files following the loss of Google Mobile Services (GMS).</p></li>
+<li><span class="timeline__date">June 2020</span><p>Petal Search was listed on Huawei’s AppGallery.</p></li>
+<li><span class="timeline__date">September 2020</span><p>At the Huawei Developer Conference (HDC 2020) from September 10 to 12, Petal Search was formally showcased as a broader Google Search competitor.</p></li>
+<li><span class="timeline__date">October 2020</span><p>During the Huawei Mate 40 Series Global Online Launch Event on October 22, 2020, Huawei officially released Petal Search as a full-fledged global search engine.</p></li>
+<li><span class="timeline__date">Tokyo 2020 Olympics</span><p>Led the Olympics campaign by refreshing the Sports section with event coverage and driving traffic to it through in-app shortcuts, banners, sidebars and pop-up notifications.</p></li>
+<li><span class="timeline__date">Expo 2020</span><p>Expo 2020 feature launched in the Petal Search app.</p></li>
+<li><span class="timeline__date">15–31 December 2021</span><p>Petal Search Shopping Festival across the UAE, Saudi Arabia, Egypt and South Africa, with vouchers from noon, Jumia, Wego and other partners.</p></li>
+<li><span class="timeline__date">New Year 2022</span><p>New Year 2022 campaign launched across the APAC region, spanning shopping and Nearby.</p></li>
+<li><span class="timeline__date">Ramadan</span><p>Ramadan Hub launched in the Middle East and Africa.</p><a class="timeline__link" href="https://www.arabnews.com/corporate-and-sponsored-content/huaweis-flagship-search-engine-petal-search-debuts-ramadan-hub-2061241" target="_blank" rel="noopener">Read on Arab News ↗</a></li>
+</ol>
+</div>
+<div class="step step--1">
+<div class="step__text"><span class="step__num">01</span><h3 class="step__title">Keyword Search</h3><p class="step__copy">The foundation of every campaign. I began with keyword search optimisation across Petal Search’s results verticals, including apps, sports, news, images and videos.</p></div>
+<div class="stack"><figure class="shot"><img src="assets/petal/voice-visual-search.webp" alt="Petal Search visual search, voice search, shopping and travel features" loading="lazy"><figcaption>Visual search, voice search, shopping and travel</figcaption></figure><div class="pair pair--even pair--wide"><figure class="shot shot--tall"><img src="assets/petal/auto-suggestion.jpg" alt="Petal Search auto suggestion for hotels in Madrid" loading="lazy"><figcaption>Auto suggestion</figcaption></figure><figure class="shot shot--tall"><img src="assets/petal/darkwords.jpeg" alt="Petal Search web feed with localised search bar text" loading="lazy"><figcaption>Localised search bar text and web feed</figcaption></figure></div><figure class="shot"><img src="assets/petal/personal-settings.jpg" alt="Petal personalised My day and Moments settings" loading="lazy"><figcaption>Personalised content settings</figcaption></figure></div>
+</div>
+<div class="step step--2">
+<div class="step__text"><span class="step__num">02</span><h3 class="step__title">Campaign Execution in WiseOper</h3><p class="step__copy">I built, configured and managed campaigns in WiseOper, Huawei’s internal operations platform, delivering them across the shopping, apps, news and travel surfaces of Petal Search.</p><div class="regions" aria-label="Campaign launch regions"><span class="regions__label">Campaign launch regions</span><div class="regions__list"><span>APAC</span><span>MENA</span><span>LATAM</span></div></div></div>
+<div class="stack"><figure class="shot"><img src="assets/petal/surfaces.avif" alt="Petal Search shopping, home feed, AppGallery app results and image search screens" loading="lazy"><figcaption>Shopping, home feed, AppGallery results and image search</figcaption></figure><figure class="shot"><img src="assets/petal/top-apps-landing.jpg" alt="Petal Search dark mode onboarding, home, Top apps and NBA results" loading="lazy"><figcaption>Onboarding, Top Apps and sports results</figcaption></figure><figure class="shot"><img src="assets/petal/search-experience.jpeg" alt="Petal Search: Reinvent the search experience" loading="lazy"><figcaption>Shopping, travel deals and privacy messaging</figcaption></figure></div>
+</div>
+<div class="step step--6">
+<div class="step__text"><span class="step__num">03</span><h3 class="step__title">Landing Pages and Interactive Doodles</h3><p class="step__copy">I developed campaign landing pages and interactive, clickable doodles that directed users to them. These served as the primary entry points for each campaign and were designed to improve click-through rate (CTR).</p></div>
+<div class="stack"><div class="pair pair--even pair--wide"><figure class="shot"><img src="assets/petal/cny-2021-landing.png" alt="Chinese New Year Sale landing page, 25–27 January 2021" loading="lazy"><figcaption>Chinese New Year 2021 landing page</figcaption></figure><figure class="shot"><img src="assets/petal/cny-landing-2.png" alt="Chinese New Year 2020 Lazada and Huawei landing page" loading="lazy"><figcaption>Chinese New Year 2020 landing page</figcaption></figure></div><div class="pair pair--even pair--wide"><figure class="shot"><img src="assets/petal/cny-malaysia-banner.jpg" alt="Chinese New Year Sale banner, Malaysia" loading="lazy"><figcaption>Chinese New Year banner, Malaysia</figcaption></figure><figure class="shot"><img src="assets/petal/cny-philippines-banner.jpg" alt="Chinese New Year campaign banner, Philippines" loading="lazy"><figcaption>Chinese New Year banner, Philippines</figcaption></figure></div><div class="pair pair--ny"><figure class="shot"><img src="assets/petal/shopping-malaysia-2022.png" alt="Petal Search home and Hello 2022 shopping page, Malaysia" loading="lazy"><figcaption>New Year 2022 shopping banner, Malaysia</figcaption></figure><figure class="shot"><img src="assets/petal/new-year-2022-nearby.webp" alt="Nearby New Year Sale 2022 banner" loading="lazy"><figcaption>New Year 2022 Sale banner in Nearby</figcaption></figure></div></div>
+</div>
+<div class="step step--3">
+<div class="step__text"><span class="step__num">04</span><h3 class="step__title">Nearby</h3><p class="step__copy">I supported the Nearby experience, which connects users with local restaurants, bars, cafés, shopping malls and other services.</p></div>
+<div class="pair">
+<figure class="shot"><img src="assets/petal/nearby-banner.jpeg" alt="Connect to Nearby services instantly via HUAWEI Petal Search" loading="lazy"><figcaption>Nearby launch creative</figcaption></figure>
+<figure class="shot"><img src="assets/petal/local-gems.avif" alt="Petal Search Nearby categories screen" loading="lazy"><figcaption>Nearby categories</figcaption></figure>
+</div>
+</div>
+<div class="step step--4">
+<div class="step__text"><span class="step__num">05</span><h3 class="step__title">News Feed</h3><p class="step__copy">I worked on the home-screen news feed and trending widget, delivered across both the international and Chinese editions of the product.</p></div>
+<div class="pair pair--quad">
+<figure class="shot shot--tall"><img src="assets/petal/dark-home.jpeg" alt="Petal Search home in dark mode with trending widget and news feed" loading="lazy"><figcaption>Trending widget and news feed, dark mode</figcaption></figure>
+<figure class="shot shot--tall"><img src="assets/petal/home-chinese.jpg" alt="Petal Search home with News widget, Chinese edition" loading="lazy"><figcaption>News widget, Chinese edition</figcaption></figure>
+<figure class="shot shot--tall"><img src="assets/petal/top-feeds.jpeg" alt="Petal Search home with Top Apps, News and Sports shortcuts and top feeds" loading="lazy"><figcaption>Top feeds</figcaption></figure><figure class="shot shot--tall"><img src="assets/petal/news-results.jpg" alt="Petal Search news results for England vs Australia" loading="lazy"><figcaption>News search results</figcaption></figure></div>
+</div>
+<div class="step step--5">
+<div class="step__text"><span class="step__num">06</span><h3 class="step__title">Sports</h3><p class="step__copy">I contributed to Sports in the home feed, featuring sports stories, live scores and league fixtures.</p></div>
+<div class="stack"><figure class="shot"><img src="assets/petal/sports-banner.png" alt="Stay on Top of All the Latest in Sports with Petal Search" loading="lazy"><figcaption>Sports campaign creative</figcaption></figure><figure class="shot"><img src="assets/petal/search-results.jpg" alt="Petal Search home, Top apps results and Sports results screens" loading="lazy"><figcaption>Sports tab within the home feed</figcaption></figure></div>
+</div>
+<div class="step step--8">
+<div class="step__text"><span class="step__num">07</span><h3 class="step__title">Exclusive Shopping and Interactive Campaigns</h3><p class="step__copy">I supported the Petal Search shopping experience, an exclusive feature for Huawei users, and launched interactive activity campaigns such as Answer &amp; Win. These campaigns invited users to answer product questions for a chance to win Huawei devices, growing audience reach, driving engagement and attracting high-intent shoppers.</p><div class="regions"><span class="regions__label">Campaign objectives</span><div class="regions__list"><span>Audience growth</span><span>Engagement</span><span>Shopper targeting</span></div></div></div>
+<div class="stack"><figure class="shot"><img src="assets/petal/shopping.png" alt="Enjoy your shopping in Petal Search" loading="lazy"><figcaption>Petal Search shopping, exclusive to Huawei users</figcaption></figure><figure class="shot shot--contain"><img src="assets/petal/answer-and-win.png" alt="HUAWEI Answer and Win campaign banners" loading="lazy"><figcaption>Answer &amp; Win campaign banners</figcaption></figure></div>
+</div>
+<div class="step step--7">
+<div class="step__text"><span class="step__num">08</span><h3 class="step__title">Mobile and Web Testing</h3><p class="step__copy">Before every launch, I carried out end-to-end quality assurance across the Petal Search app and web views to ensure each campaign rendered and performed consistently for every user.</p></div>
+<ul class="qa">
+<li><h4>Cross-device validation</h4><p>Tested app and web views across multiple screen sizes, resolutions and Huawei devices to confirm responsive layouts and correct asset rendering.</p></li>
+<li><h4>Link and navigation checks</h4><p>Verified that every doodle, banner and call to action routed to the correct landing page, with deep links and redirects resolving as intended.</p></li>
+<li><h4>Localisation review</h4><p>Reviewed copy, imagery, currency and date formats for each market across APAC, MENA and LATAM.</p></li>
+<li><h4>Tracking verification</h4><p>Confirmed analytics tags and campaign parameters fired correctly so that performance data was accurate from launch.</p></li>
+<li><h4>Pre-launch sign-off</h4><p>Logged and resolved issues with stakeholders, then completed final checks in staging before campaigns went live.</p></li>
+<li><h4>Post-launch monitoring</h4><p>Monitored live campaigns for display and performance issues and applied fixes promptly.</p></li>
+</ul>
+</div>
+<div class="step step--9">
+<div class="step__text"><span class="step__num">09</span><h3 class="step__title">Voice and Speech Recognition Testing</h3><p class="step__copy">I conducted functional and user acceptance testing (UAT) of the voice search feature, validating that voice commands were accurately recognised, transcribed and converted into relevant search results.</p></div>
+<ul class="qa">
+<li><h4>Speech-to-text accuracy</h4><p>Verified transcription accuracy across a range of voice queries, phrasing and speaking speeds.</p></li>
+<li><h4>Accent and language coverage</h4><p>Tested recognition across regional accents and supported languages to ensure consistent results in every market.</p></li>
+<li><h4>Intent and query matching</h4><p>Confirmed that spoken commands mapped to the correct search intent, results and in-app destinations.</p></li>
+<li><h4>Environment and edge cases</h4><p>Assessed performance in noisy environments, with partial or interrupted commands, and when microphone permissions were denied.</p></li>
+<li><h4>Response time and UI states</h4><p>Checked listening, processing and error states for responsiveness and clear user feedback.</p></li>
+<li><h4>Defect reporting</h4><p>Documented issues with reproducible steps and retested fixes before release.</p></li>
+</ul>
+</div>
+<div class="tools">
+<h3 class="milestones__title">Tools Used</h3>
+<ul class="tools__list">
+<li><span class="tools__mark tools__mark--text">W</span><div><strong>WiseOper</strong><span>Campaign building and operations</span></div></li>
+<li><span class="tools__mark"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain=www.finebi.com" alt="" onload="if(this.naturalWidth<=16){this.onerror()}" onerror="this.parentNode.classList.add('tools__mark--text');this.parentNode.textContent='F'"></span><div><strong>FineBI</strong><span>Reporting and business intelligence</span></div></li>
+<li><span class="tools__mark"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain=analytics.google.com" alt="" onload="if(this.naturalWidth<=16){this.onerror()}" onerror="this.parentNode.classList.add('tools__mark--text');this.parentNode.textContent='GA'"></span><div><strong>Google Analytics</strong><span>Traffic and campaign performance</span></div></li>
+</ul>
+</div>
+</div>
+</section>
+<script>
+(function(){
+const NS="http://www.w3.org/2000/svg";
+const G={"0":"01110 10001 10011 10101 11001 10001 01110","1":"010 110 010 010 010 010 111","2":"01110 10001 00001 00010 00100 01000 11111","3":"11110 00001 00001 01110 00001 00001 11110","4":"00010 00110 01010 10010 11111 00010 00010","5":"11111 10000 10000 11110 00001 00001 11110","6":"01110 10000 10000 11110 10001 10001 01110","7":"11111 00001 00010 00100 01000 01000 01000","8":"01110 10001 10001 01110 10001 10001 01110","9":"01110 10001 10001 01111 00001 00001 01110",".":"0 0 0 0 0 0 1","I":"111 010 010 010 010 010 111","a":"00000 00000 01110 00001 01111 10001 01111","e":"00000 00000 01110 10001 11111 10000 01110","g":"00000 00000 01111 10001 01111 00001 01110","i":"1 0 1 1 1 1 1","l":"10 10 10 10 10 10 01","n":"00000 00000 11110 10001 10001 10001 10001","t":"010 010 111 010 010 010 001","r":"00000 00000 10110 11001 10000 10000 10000"};
+document.querySelectorAll("[data-dots]").forEach(el=>{
+const word=el.classList.contains("dot-word");
+const px=word?4:5,py=4,gap=1;
+const r=word?1.8:(el.closest(".metric--context")?2.32:(el.closest(".metric--speed")?2.05:1.55));
+const svg=document.createElementNS(NS,"svg");svg.setAttribute("class","dot-svg");svg.setAttribute("fill","currentColor");svg.setAttribute("aria-hidden","true");
+let x=0;
+[...el.dataset.dots].forEach((ch,ci)=>{
+const rows=(G[ch]||"0 0 0 0 0 0 0").split(" ");const w=rows[0].length;
+rows.forEach((row,y)=>[...row].forEach((b,col)=>{if(b!=="1")return;const c=document.createElementNS(NS,"circle");c.setAttribute("cx",(x+col*px+1.55).toFixed(2));c.setAttribute("cy",(y*py+1.55).toFixed(2));c.setAttribute("r",r);svg.appendChild(c)}));
+x+=w*px+gap*px;
+});
+x-=gap*px;
+svg.setAttribute("viewBox",`0 0 ${x} 28`);
+el.appendChild(svg);
+});
+const ticks=document.getElementById("gaugeTicks");
+if(ticks)for(let i=0;i<=22;i++){const a=(190+i*5)*Math.PI/180,o=142,inn=i%5===0?129:133;const l=document.createElementNS(NS,"line");l.setAttribute("class","tick");l.setAttribute("x1",(163+Math.cos(a)*inn).toFixed(2));l.setAttribute("y1",(163+Math.sin(a)*inn).toFixed(2));l.setAttribute("x2",(163+Math.cos(a)*o).toFixed(2));l.setAttribute("y2",(163+Math.sin(a)*o).toFixed(2));l.setAttribute("stroke-width",i%5===0?1.5:1);ticks.appendChild(l)}
+document.querySelectorAll('.card').forEach(card=>{
+const fine=matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(fine){card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;card.classList.add('is-hover');card.style.setProperty('--ry',((x-.5)*8).toFixed(2)+'deg');card.style.setProperty('--rx',((.5-y)*8).toFixed(2)+'deg');card.style.setProperty('--mx',(x*100)+'%');card.style.setProperty('--my',(y*100)+'%')});
+card.addEventListener('pointerleave',()=>{card.classList.remove('is-hover');card.style.setProperty('--rx','0deg');card.style.setProperty('--ry','0deg')})}
+const btn=card.querySelector('.card__flip'),back=card.querySelector('.card__back');
+if(btn)btn.addEventListener('click',()=>{const on=card.classList.toggle('is-flipped');btn.setAttribute('aria-expanded',on);btn.setAttribute('aria-label',on?'Hide campaign details':'Show campaign details');back.setAttribute('aria-hidden',!on)});
+});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.work__head,.milestones,.step,.tools').forEach(el=>{el.classList.add('reveal');io.observe(el)});
+const root=document.documentElement;
+const done=()=>{clearTimeout(window.__entranceFailsafe);root.classList.remove("entrance-active")};
+if(matchMedia("(prefers-reduced-motion: reduce)").matches){done();return}
+const sel=matchMedia("(max-width: 767px)").matches?".card--speed .learn-more":".card--context .learn-more";
+const t=document.querySelector(sel);
+if(t)t.addEventListener("animationend",done,{once:true});else setTimeout(done,1600);
+})();
+</script>
+</body>
+</html>

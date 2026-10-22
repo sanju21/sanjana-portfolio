@@ -94,6 +94,47 @@ const PillButton = ({ children, textClass = "text-base md:text-lg", href, onClic
 };
 
 // ─────────── Navbar ───────────
+const PORTFOLIO = [
+  { n: "Huawei", sub: "Petal Search launch & campaigns", href: "/huawei.html" },
+  { n: "JP Morgan", sub: "Experience", href: "#experience" },
+];
+
+const PortfolioMenu = ({ go }) => {
+  const [show, setShow] = React.useState(false);
+  const ref = React.useRef(null);
+  useEffect(() => {
+    const close = (e) => { if (ref.current && !ref.current.contains(e.target)) setShow(false); };
+    document.addEventListener("click", close);
+    return () => document.removeEventListener("click", close);
+  }, []);
+  // Hover only for a real mouse: a tap on a touch tablet fires an emulated
+  // enter and then the click, which would open and immediately toggle shut.
+  return (
+    <div ref={ref} className="relative"
+      onPointerEnter={(e) => e.pointerType === "mouse" && setShow(true)}
+      onPointerLeave={(e) => e.pointerType === "mouse" && setShow(false)}>
+      <button type="button" aria-expanded={show} aria-haspopup="true" onClick={() => setShow(!show)}
+        className="flex items-center gap-1.5 text-base text-gray-700 hover:text-black font-medium transition-colors duration-200 py-2">
+        Portfolio
+        <svg viewBox="0 0 24 24" className={`w-4 h-4 transition-transform duration-200 ${show ? "rotate-180" : ""}`} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+      </button>
+      {show && (
+        <div className="absolute left-0 top-full pt-2 z-30">
+          <div className="w-64 rounded-2xl bg-white p-2 shadow-lg ring-1 ring-black/5">
+            {PORTFOLIO.map((p) => (
+              <a key={p.n} href={p.href} onClick={p.href.startsWith("#") ? go(p.href.slice(1)) : undefined}
+                className="block px-4 py-3 rounded-xl hover:bg-black/5 transition-colors duration-200">
+                <span className="block text-base font-medium text-black">{p.n}</span>
+                <span className="block text-sm text-black/60">{p.sub}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 const Navbar = () => {
   const links = ["About", "Experience", "Skills", "Recognition"];
   const [open, setOpen] = React.useState(false);
@@ -115,6 +156,7 @@ const Navbar = () => {
           {links.map((l) => (
             <a key={l} href={`#${l.toLowerCase()}`} onClick={go(l.toLowerCase())} className="text-base text-gray-700 hover:text-black font-medium transition-colors duration-200 py-2">{l}</a>
           ))}
+          <PortfolioMenu go={go} />
         </div>
         {/* ml-auto keeps the actions right-aligned now the wordmark is gone -
             without it, justify-between would pull them left on mobile where
@@ -141,6 +183,11 @@ const Navbar = () => {
           {links.map((l) => (
             <a key={l} href={`#${l.toLowerCase()}`} onClick={go(l.toLowerCase())}
               className="block px-4 py-3 rounded-xl text-base font-medium text-gray-800 hover:bg-black/5 transition-colors duration-200">{l}</a>
+          ))}
+          <div className="px-4 pt-3 pb-1 text-xs font-semibold uppercase tracking-wider text-black/50">Portfolio</div>
+          {PORTFOLIO.map((p) => (
+            <a key={p.n} href={p.href} onClick={p.href.startsWith("#") ? go(p.href.slice(1)) : () => setOpen(false)}
+              className="block px-4 py-3 rounded-xl text-base font-medium text-gray-800 hover:bg-black/5 transition-colors duration-200">{p.n}</a>
           ))}
           <a href={LINKEDIN} target="_blank" rel="noopener noreferrer"
             className="flex items-center gap-2.5 px-4 py-3 rounded-xl text-base font-medium text-gray-800 hover:bg-black/5 transition-colors duration-200">
