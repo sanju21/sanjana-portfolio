@@ -137,7 +137,7 @@ if (existsSync(join(root, "assets"))) {
 // ------------------------------------------------------------------ 5. pages
 // Self-contained pages with inline CSS/JS and no .jsx - nothing to compile.
 // Vercel serves only dist/, so a page missing here would 404 in production.
-const PAGES = ["huawei.html"];
+const PAGES = ["huawei.html", "jpmorgan.html"];
 for (const page of PAGES) {
   if (!existsSync(join(root, page))) throw new Error(`${page} is listed in PAGES but missing`);
   cpSync(join(root, page), join(dist, page));
