@@ -96,7 +96,7 @@ const PillButton = ({ children, textClass = "text-base md:text-lg", href, onClic
 // ─────────── Navbar ───────────
 const PORTFOLIO = [
   { n: "Huawei", sub: "Petal Search launch & campaigns", href: "/huawei.html" },
-  { n: "JP Morgan", sub: "Experience", href: "#experience" },
+  { n: "JP Morgan", sub: "Audience data & card campaigns", href: "/jpmorgan.html" },
 ];
 
 const PortfolioMenu = ({ go }) => {
