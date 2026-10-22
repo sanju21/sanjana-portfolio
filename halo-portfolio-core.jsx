@@ -285,9 +285,10 @@ const AboutSection = () => (
         <div className="rounded-2xl overflow-hidden lg:col-span-2 p-6 sm:p-7 sm:min-h-80 flex flex-col gap-4 sm:gap-6 sm:justify-between relative">
           <LazyVideo className="object-cover absolute inset-0 w-full h-full" src={VIDEO_B} />
           {/* The diagonal hero scrim clears text on a wide hero but leaves the
-              right side bare on a narrow card, so use a flat wash on mobile. */}
-          <div className="absolute inset-0 z-[1] pointer-events-none bg-white/75 sm:bg-transparent"></div>
-          <div className="hidden sm:block hero-scrim absolute inset-0 z-[1] pointer-events-none"></div>
+              right side bare on a narrow card, so use a flat wash until lg,
+              where this card spans two columns. */}
+          <div className="absolute inset-0 z-[1] pointer-events-none bg-white/75 lg:bg-transparent"></div>
+          <div className="hidden lg:block hero-scrim absolute inset-0 z-[1] pointer-events-none"></div>
           <h3 className="relative z-10 text-black text-[28px] font-medium leading-snug" style={{ letterSpacing: "-0.02em" }}>Campaigns that convert</h3>
           <p className="relative z-10 text-black text-[20px] font-semibold max-w-xs">Eight-figure paid-media programmes with a 20% lift in conversion and data-driven audience targeting.</p>
         </div>
@@ -328,11 +329,11 @@ const TOOLS = [
 
 const SkillsSection = () => (
   <section id="skills" className="bg-page px-4 sm:px-6 py-6 sm:py-8 md:py-12">
-    <div className="max-w-[88rem] mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 items-center">
+    <div className="max-w-[88rem] mx-auto grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-8 items-center">
       <div className="text-black/70 text-base leading-relaxed">
         Platforms &amp; tools I work across every day.
       </div>
-      <div className="md:col-span-3 overflow-hidden py-3">
+      <div className="lg:col-span-3 overflow-hidden py-3">
         <div className="backers-track">
           {[...TOOLS, ...TOOLS].map((b, i) => (
             <LogoChip key={i} name={b.n} domain={b.d} />
