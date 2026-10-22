@@ -159,11 +159,11 @@ a{color:var(--ink)}a:hover{color:#ad314d}
 .ticker span::after{content:"";width:8px;height:8px;border-radius:999px;background:#ad355b}
 @keyframes ticker{to{transform:translateX(-50%)}}
 .timeline li,.qa li,.tools__list li{transition:transform .25s ease,box-shadow .25s ease}
-.timeline li:hover,.qa li:hover,.tools__list li:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(50,28,39,.12)}
+@media (hover:hover){.timeline li:hover,.qa li:hover,.tools__list li:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(50,28,39,.12)}}
 .shot{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease}
 .shot img{transition:transform .6s cubic-bezier(.16,1,.3,1)}
-.shot:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(50,28,39,.10),0 26px 50px rgba(50,28,39,.16)}
-.shot:hover img{transform:scale(1.03)}
+@media (hover:hover){.shot:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(50,28,39,.10),0 26px 50px rgba(50,28,39,.16)}
+.shot:hover img{transform:scale(1.03)}}
 .reveal{opacity:0;translate:0 24px;transition:opacity .7s cubic-bezier(.22,1,.36,1),translate .7s cubic-bezier(.22,1,.36,1)}
 .reveal.is-in{opacity:1;translate:none}
 @media (prefers-reduced-motion:reduce){.ticker__track{animation:none}.reveal{opacity:1;translate:none}.card{transform:none}}
@@ -179,7 +179,7 @@ a{color:var(--ink)}a:hover{color:#ad314d}
 .hero__intro{font-size:clamp(15px,min(1.3vw,2.4vh),19px);max-width:36em;margin:0}
 .hero__ctas{display:flex;flex-wrap:wrap;gap:12px}
 .hero__btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;background:rgba(255,255,255,.85);border:1px solid rgba(0,0,0,.06);color:#202020;font-size:15px;font-weight:500;text-decoration:none;box-shadow:0 1px 2px rgba(50,28,39,.08);transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
-.hero__btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(50,28,39,.14);color:#202020}
+@media (hover:hover){.hero__btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(50,28,39,.14);color:#202020}}
 .hero__btn--primary{background:#202020;color:#fff;border-color:#202020}
 .hero__btn--primary:hover{background:#ad355b;border-color:#ad355b;color:#fff}
 .hero__stats{display:flex;flex-wrap:wrap;gap:clamp(20px,3vw,44px);margin:clamp(4px,1vh,12px) 0 0;padding-top:clamp(14px,2.4vh,22px);border-top:1px solid rgba(0,0,0,.1)}
@@ -188,7 +188,7 @@ a{color:var(--ink)}a:hover{color:#ad314d}
 .hero__stats dd{margin:0;color:#4a4a4a;font-size:13px}
 .hero__visual{position:relative;min-width:0}
 .hero__frame{margin:0;border-radius:24px;overflow:hidden;background:#fff;border:1px solid rgba(255,255,255,.9);box-shadow:0 30px 60px rgba(50,28,39,.18),0 2px 6px rgba(50,28,39,.08);transform:perspective(1200px) rotateY(-6deg) rotateX(2deg);transition:transform .6s cubic-bezier(.16,1,.3,1)}
-.hero__visual:hover .hero__frame{transform:none}
+@media (hover:hover){.hero__visual:hover .hero__frame{transform:none}}
 .hero__frame img{display:block;width:100%;height:auto;max-height:72vh;object-fit:cover}
 .hero__chip{position:absolute;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#202020;font-size:14px;font-weight:600;box-shadow:0 10px 24px rgba(50,28,39,.14);white-space:nowrap;animation:float 6s ease-in-out infinite}
 .hero__chip::before{content:"";display:inline-block;width:8px;height:8px;border-radius:999px;margin-right:8px;vertical-align:middle}
@@ -257,6 +257,31 @@ html,body{height:auto;overflow:visible}
 .entrance-active *{animation:none!important}
 *{transition-duration:.01ms!important}
 }
+/* ---- Mobile pass ---- */
+.outro{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;width:min(calc(100% - 2 * var(--gutter)),var(--content-max));margin:0 auto clamp(40px,8vh,96px);padding-top:clamp(28px,5vh,48px);border-top:1px solid rgba(0,0,0,.1)}
+.outro__title{margin:0;color:#202020;font-size:clamp(22px,2vw,30px);font-weight:600;letter-spacing:-.01em}
+/* The hero title lines were flex rows with white-space:pre; as plain blocks they still hold one line on wider screens but can wrap on narrow phones instead of overflowing. */
+.hero__title .headline__line{display:block;white-space:nowrap}
+@media (max-width:767px){.hero__title .headline__line{white-space:normal}}
+.hero__title .brand-logo{vertical-align:-.1em}
+/* 44px tap targets, and keep the back pill clear of the notch in landscape. */
+.back-link{padding:13px 18px;top:max(16px,env(safe-area-inset-top));left:max(var(--gutter),env(safe-area-inset-left))}
+.links a{padding:13px 18px}
+.timeline__link{display:inline-block;padding-block:14px 12px}
+@media (max-width:767px){
+.stage{padding-top:84px}
+.hero{gap:28px}
+.hero__ctas{width:100%}
+.hero__btn{flex:1 1 auto;justify-content:center}
+/* Floating chips covered the banner artwork on a phone; sit them in a row under it instead. */
+.hero__visual{display:flex;flex-wrap:wrap;gap:8px}
+.hero__frame{flex:0 0 100%}
+.hero__chip{position:static;animation:none;font-size:13px;padding:8px 14px}
+.work{padding-block:56px}
+.milestones__head{flex-direction:column;align-items:flex-start}
+.step{gap:18px}
+.step__copy{max-width:none}
+}
 </style>
 </head>
 <body>
@@ -268,12 +293,12 @@ html,body{height:auto;overflow:visible}
 </svg>
 <main class="stage">
 <a class="back-link" href="/">← Back to portfolio</a>
-<video class="stage-motion stage-motion--wide" autoplay muted loop playsinline preload="auto" aria-hidden="true" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/5c3ec08f-2dbf-4c0a-8588-f6106a789443.webp" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260826_125226_45cb4f38-aa7e-47e1-885d-ae0b69745369.mp4"></video>
-<video class="stage-motion stage-motion--narrow" autoplay muted loop playsinline preload="none" aria-hidden="true" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/0f4926a4-e660-4df2-9195-2bfb3e341bdd.webp" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260826_125242_daae1570-386d-4bd5-8896-80499e2371e0.mp4"></video>
+<video class="stage-motion stage-motion--wide" muted loop playsinline preload="none" aria-hidden="true" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/5c3ec08f-2dbf-4c0a-8588-f6106a789443.webp" data-src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260826_125226_45cb4f38-aa7e-47e1-885d-ae0b69745369.mp4"></video>
+<video class="stage-motion stage-motion--narrow" muted loop playsinline preload="none" aria-hidden="true" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/0f4926a4-e660-4df2-9195-2bfb3e341bdd.webp" data-src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260826_125242_daae1570-386d-4bd5-8896-80499e2371e0.mp4"></video>
 <svg class="paper-texture" aria-hidden="true"><defs><filter id="paperNoise"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" seed="8"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><pattern id="paperFiber" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(17)"><rect width="1" height="6" fill="rgba(0,0,0,.03)"></rect></pattern></defs><rect width="100%" height="100%" filter="url(#paperNoise)" opacity=".2"></rect><rect width="100%" height="100%" fill="url(#paperFiber)"></rect></svg>
 <div class="hero">
 <div class="hero__copy">
-<h1 class="headline hero__title"><span class="headline__line" style="height:61px;width:500px"><img class="brand-logo" src="assets/petal/petal-logo.png" alt="Petal Search logo" width="40" height="40">Petal Search</span><span class="headline__line" style="height:61px;width:500px">Launch &amp; <em style="height:65px">Campaigns</em></span></h1>
+<h1 class="headline hero__title"><span class="headline__line"><img class="brand-logo" src="assets/petal/petal-logo.png" alt="Petal Search logo" width="40" height="40">Petal Search</span><span class="headline__line">Launch &amp; <em>Campaigns</em></span></h1>
 <p class="intro hero__intro">Launching Huawei’s global search engine in international markets after the loss of Google Mobile Services. I took campaigns from keyword search to live, built in WiseOper and delivered across APAC, MENA and LATAM.</p>
 <div class="hero__ctas"><a class="hero__btn hero__btn--primary" href="https://consumer.huawei.com/en/community/details/topicId-124931/" target="_blank" rel="noopener">Learn more<span aria-hidden="true">↗</span></a><a class="hero__btn" href="https://aspiegel.com/en/petal-search" target="_blank" rel="noopener">Visit Petal Search<span aria-hidden="true">↗</span></a></div>
 <dl class="hero__stats">
@@ -283,9 +308,10 @@ html,body{height:auto;overflow:visible}
 </dl>
 </div>
 <div class="hero__visual">
-<figure class="hero__frame" style="position:relative"><img src="assets/petal/brand-banner.jpeg" alt="HUAWEI Petal Search"><span class="hero__chip hero__chip--c" style="position:absolute;left:534px;top:299px;width:203px;height:37px">APAC · MENA · LATAM</span></figure>
+<figure class="hero__frame"><img src="assets/petal/brand-banner.jpeg" width="817" height="375" decoding="async" alt="HUAWEI Petal Search"></figure>
 <span class="hero__chip hero__chip--a">Keyword search</span>
 <span class="hero__chip hero__chip--b">Campaign Execution</span>
+<span class="hero__chip hero__chip--c">APAC · MENA · LATAM</span>
 </div>
 </div>
 </main>
@@ -311,37 +337,37 @@ html,body{height:auto;overflow:visible}
 </div>
 <div class="step step--1">
 <div class="step__text"><span class="step__num">01</span><h3 class="step__title">Keyword Search</h3><p class="step__copy">The foundation of every campaign. I began with keyword search optimisation across Petal Search’s results verticals, including apps, sports, news, images and videos.</p></div>
-<div class="stack"><figure class="shot"><img src="assets/petal/voice-visual-search.webp" alt="Petal Search visual search, voice search, shopping and travel features" loading="lazy"><figcaption>Visual search, voice search, shopping and travel</figcaption></figure><div class="pair pair--even pair--wide"><figure class="shot shot--tall"><img src="assets/petal/auto-suggestion.jpg" alt="Petal Search auto suggestion for hotels in Madrid" loading="lazy"><figcaption>Auto suggestion</figcaption></figure><figure class="shot shot--tall"><img src="assets/petal/darkwords.jpeg" alt="Petal Search web feed with localised search bar text" loading="lazy"><figcaption>Localised search bar text and web feed</figcaption></figure></div><figure class="shot"><img src="assets/petal/personal-settings.jpg" alt="Petal personalised My day and Moments settings" loading="lazy"><figcaption>Personalised content settings</figcaption></figure></div>
+<div class="stack"><figure class="shot"><img src="assets/petal/voice-visual-search.webp" width="1280" height="720" decoding="async" alt="Petal Search visual search, voice search, shopping and travel features" loading="lazy"><figcaption>Visual search, voice search, shopping and travel</figcaption></figure><div class="pair pair--even pair--wide"><figure class="shot shot--tall"><img src="assets/petal/auto-suggestion.jpg" width="449" height="799" decoding="async" alt="Petal Search auto suggestion for hotels in Madrid" loading="lazy"><figcaption>Auto suggestion</figcaption></figure><figure class="shot shot--tall"><img src="assets/petal/darkwords.jpeg" width="371" height="826" decoding="async" alt="Petal Search web feed with localised search bar text" loading="lazy"><figcaption>Localised search bar text and web feed</figcaption></figure></div><figure class="shot"><img src="assets/petal/personal-settings.jpg" width="682" height="720" decoding="async" alt="Petal personalised My day and Moments settings" loading="lazy"><figcaption>Personalised content settings</figcaption></figure></div>
 </div>
 <div class="step step--2">
 <div class="step__text"><span class="step__num">02</span><h3 class="step__title">Campaign Execution in WiseOper</h3><p class="step__copy">I built, configured and managed campaigns in WiseOper, Huawei’s internal operations platform, delivering them across the shopping, apps, news and travel surfaces of Petal Search.</p><div class="regions" aria-label="Campaign launch regions"><span class="regions__label">Campaign launch regions</span><div class="regions__list"><span>APAC</span><span>MENA</span><span>LATAM</span></div></div></div>
-<div class="stack"><figure class="shot"><img src="assets/petal/surfaces.avif" alt="Petal Search shopping, home feed, AppGallery app results and image search screens" loading="lazy"><figcaption>Shopping, home feed, AppGallery results and image search</figcaption></figure><figure class="shot"><img src="assets/petal/top-apps-landing.jpg" alt="Petal Search dark mode onboarding, home, Top apps and NBA results" loading="lazy"><figcaption>Onboarding, Top Apps and sports results</figcaption></figure><figure class="shot"><img src="assets/petal/search-experience.jpeg" alt="Petal Search: Reinvent the search experience" loading="lazy"><figcaption>Shopping, travel deals and privacy messaging</figcaption></figure></div>
+<div class="stack"><figure class="shot"><img src="assets/petal/surfaces.avif" width="1600" height="900" decoding="async" alt="Petal Search shopping, home feed, AppGallery app results and image search screens" loading="lazy"><figcaption>Shopping, home feed, AppGallery results and image search</figcaption></figure><figure class="shot"><img src="assets/petal/top-apps-landing.jpg" width="780" height="390" decoding="async" alt="Petal Search dark mode onboarding, home, Top apps and NBA results" loading="lazy"><figcaption>Onboarding, Top Apps and sports results</figcaption></figure><figure class="shot"><img src="assets/petal/search-experience.jpeg" width="576" height="303" decoding="async" alt="Petal Search: Reinvent the search experience" loading="lazy"><figcaption>Shopping, travel deals and privacy messaging</figcaption></figure></div>
 </div>
 <div class="step step--6">
 <div class="step__text"><span class="step__num">03</span><h3 class="step__title">Landing Pages and Interactive Doodles</h3><p class="step__copy">I developed campaign landing pages and interactive, clickable doodles that directed users to them. These served as the primary entry points for each campaign and were designed to improve click-through rate (CTR).</p></div>
-<div class="stack"><div class="pair pair--even pair--wide"><figure class="shot"><img src="assets/petal/cny-2021-landing.png" alt="Chinese New Year Sale landing page, 25–27 January 2021" loading="lazy"><figcaption>Chinese New Year 2021 landing page</figcaption></figure><figure class="shot"><img src="assets/petal/cny-landing-2.png" alt="Chinese New Year 2020 Lazada and Huawei landing page" loading="lazy"><figcaption>Chinese New Year 2020 landing page</figcaption></figure></div><div class="pair pair--even pair--wide"><figure class="shot"><img src="assets/petal/cny-malaysia-banner.jpg" alt="Chinese New Year Sale banner, Malaysia" loading="lazy"><figcaption>Chinese New Year banner, Malaysia</figcaption></figure><figure class="shot"><img src="assets/petal/cny-philippines-banner.jpg" alt="Chinese New Year campaign banner, Philippines" loading="lazy"><figcaption>Chinese New Year banner, Philippines</figcaption></figure></div><div class="pair pair--ny"><figure class="shot"><img src="assets/petal/shopping-malaysia-2022.png" alt="Petal Search home and Hello 2022 shopping page, Malaysia" loading="lazy"><figcaption>New Year 2022 shopping banner, Malaysia</figcaption></figure><figure class="shot"><img src="assets/petal/new-year-2022-nearby.webp" alt="Nearby New Year Sale 2022 banner" loading="lazy"><figcaption>New Year 2022 Sale banner in Nearby</figcaption></figure></div></div>
+<div class="stack"><div class="pair pair--even pair--wide"><figure class="shot"><img src="assets/petal/cny-2021-landing.webp" width="1170" height="780" decoding="async" alt="Chinese New Year Sale landing page, 25–27 January 2021" loading="lazy"><figcaption>Chinese New Year 2021 landing page</figcaption></figure><figure class="shot"><img src="assets/petal/cny-landing-2.webp" width="800" height="404" decoding="async" alt="Chinese New Year 2020 Lazada and Huawei landing page" loading="lazy"><figcaption>Chinese New Year 2020 landing page</figcaption></figure></div><div class="pair pair--even pair--wide"><figure class="shot"><img src="assets/petal/cny-malaysia-banner.jpg" width="750" height="394" decoding="async" alt="Chinese New Year Sale banner, Malaysia" loading="lazy"><figcaption>Chinese New Year banner, Malaysia</figcaption></figure><figure class="shot"><img src="assets/petal/cny-philippines-banner.jpg" width="1200" height="628" decoding="async" alt="Chinese New Year campaign banner, Philippines" loading="lazy"><figcaption>Chinese New Year banner, Philippines</figcaption></figure></div><div class="pair pair--ny"><figure class="shot"><img src="assets/petal/shopping-malaysia-2022.webp" width="1000" height="600" decoding="async" alt="Petal Search home and Hello 2022 shopping page, Malaysia" loading="lazy"><figcaption>New Year 2022 shopping banner, Malaysia</figcaption></figure><figure class="shot"><img src="assets/petal/new-year-2022-nearby.webp" width="474" height="937" decoding="async" alt="Nearby New Year Sale 2022 banner" loading="lazy"><figcaption>New Year 2022 Sale banner in Nearby</figcaption></figure></div></div>
 </div>
 <div class="step step--3">
 <div class="step__text"><span class="step__num">04</span><h3 class="step__title">Nearby</h3><p class="step__copy">I supported the Nearby experience, which connects users with local restaurants, bars, cafés, shopping malls and other services.</p></div>
 <div class="pair">
-<figure class="shot"><img src="assets/petal/nearby-banner.jpeg" alt="Connect to Nearby services instantly via HUAWEI Petal Search" loading="lazy"><figcaption>Nearby launch creative</figcaption></figure>
-<figure class="shot"><img src="assets/petal/local-gems.avif" alt="Petal Search Nearby categories screen" loading="lazy"><figcaption>Nearby categories</figcaption></figure>
+<figure class="shot"><img src="assets/petal/nearby-banner.jpeg" width="599" height="327" decoding="async" alt="Connect to Nearby services instantly via HUAWEI Petal Search" loading="lazy"><figcaption>Nearby launch creative</figcaption></figure>
+<figure class="shot"><img src="assets/petal/local-gems.avif" width="340" height="604" decoding="async" alt="Petal Search Nearby categories screen" loading="lazy"><figcaption>Nearby categories</figcaption></figure>
 </div>
 </div>
 <div class="step step--4">
 <div class="step__text"><span class="step__num">05</span><h3 class="step__title">News Feed</h3><p class="step__copy">I worked on the home-screen news feed and trending widget, delivered across both the international and Chinese editions of the product.</p></div>
 <div class="pair pair--quad">
-<figure class="shot shot--tall"><img src="assets/petal/dark-home.jpeg" alt="Petal Search home in dark mode with trending widget and news feed" loading="lazy"><figcaption>Trending widget and news feed, dark mode</figcaption></figure>
-<figure class="shot shot--tall"><img src="assets/petal/home-chinese.jpg" alt="Petal Search home with News widget, Chinese edition" loading="lazy"><figcaption>News widget, Chinese edition</figcaption></figure>
-<figure class="shot shot--tall"><img src="assets/petal/top-feeds.jpeg" alt="Petal Search home with Top Apps, News and Sports shortcuts and top feeds" loading="lazy"><figcaption>Top feeds</figcaption></figure><figure class="shot shot--tall"><img src="assets/petal/news-results.jpg" alt="Petal Search news results for England vs Australia" loading="lazy"><figcaption>News search results</figcaption></figure></div>
+<figure class="shot shot--tall"><img src="assets/petal/dark-home.jpeg" width="326" height="613" decoding="async" alt="Petal Search home in dark mode with trending widget and news feed" loading="lazy"><figcaption>Trending widget and news feed, dark mode</figcaption></figure>
+<figure class="shot shot--tall"><img src="assets/petal/home-chinese.jpg" width="820" height="1765" decoding="async" alt="Petal Search home with News widget, Chinese edition" loading="lazy"><figcaption>News widget, Chinese edition</figcaption></figure>
+<figure class="shot shot--tall"><img src="assets/petal/top-feeds.jpeg" width="373" height="821" decoding="async" alt="Petal Search home with Top Apps, News and Sports shortcuts and top feeds" loading="lazy"><figcaption>Top feeds</figcaption></figure><figure class="shot shot--tall"><img src="assets/petal/news-results.jpg" width="387" height="800" decoding="async" alt="Petal Search news results for England vs Australia" loading="lazy"><figcaption>News search results</figcaption></figure></div>
 </div>
 <div class="step step--5">
 <div class="step__text"><span class="step__num">06</span><h3 class="step__title">Sports</h3><p class="step__copy">I contributed to Sports in the home feed, featuring sports stories, live scores and league fixtures.</p></div>
-<div class="stack"><figure class="shot"><img src="assets/petal/sports-banner.png" alt="Stay on Top of All the Latest in Sports with Petal Search" loading="lazy"><figcaption>Sports campaign creative</figcaption></figure><figure class="shot"><img src="assets/petal/search-results.jpg" alt="Petal Search home, Top apps results and Sports results screens" loading="lazy"><figcaption>Sports tab within the home feed</figcaption></figure></div>
+<div class="stack"><figure class="shot"><img src="assets/petal/sports-banner.webp" width="781" height="432" decoding="async" alt="Stay on Top of All the Latest in Sports with Petal Search" loading="lazy"><figcaption>Sports campaign creative</figcaption></figure><figure class="shot"><img src="assets/petal/search-results.jpg" width="1025" height="720" decoding="async" alt="Petal Search home, Top apps results and Sports results screens" loading="lazy"><figcaption>Sports tab within the home feed</figcaption></figure></div>
 </div>
 <div class="step step--8">
 <div class="step__text"><span class="step__num">07</span><h3 class="step__title">Exclusive Shopping and Interactive Campaigns</h3><p class="step__copy">I supported the Petal Search shopping experience, an exclusive feature for Huawei users, and launched interactive activity campaigns such as Answer &amp; Win. These campaigns invited users to answer product questions for a chance to win Huawei devices, growing audience reach, driving engagement and attracting high-intent shoppers.</p><div class="regions"><span class="regions__label">Campaign objectives</span><div class="regions__list"><span>Audience growth</span><span>Engagement</span><span>Shopper targeting</span></div></div></div>
-<div class="stack"><figure class="shot"><img src="assets/petal/shopping.png" alt="Enjoy your shopping in Petal Search" loading="lazy"><figcaption>Petal Search shopping, exclusive to Huawei users</figcaption></figure><figure class="shot shot--contain"><img src="assets/petal/answer-and-win.png" alt="HUAWEI Answer and Win campaign banners" loading="lazy"><figcaption>Answer &amp; Win campaign banners</figcaption></figure></div>
+<div class="stack"><figure class="shot"><img src="assets/petal/shopping.webp" width="554" height="320" decoding="async" alt="Enjoy your shopping in Petal Search" loading="lazy"><figcaption>Petal Search shopping, exclusive to Huawei users</figcaption></figure><figure class="shot shot--contain"><img src="assets/petal/answer-and-win.webp" width="579" height="873" decoding="async" alt="HUAWEI Answer and Win campaign banners" loading="lazy"><figcaption>Answer &amp; Win campaign banners</figcaption></figure></div>
 </div>
 <div class="step step--7">
 <div class="step__text"><span class="step__num">08</span><h3 class="step__title">Mobile and Web Testing</h3><p class="step__copy">Before every launch, I carried out end-to-end quality assurance across the Petal Search app and web views to ensure each campaign rendered and performed consistently for every user.</p></div>
@@ -369,12 +395,16 @@ html,body{height:auto;overflow:visible}
 <h3 class="milestones__title">Tools Used</h3>
 <ul class="tools__list">
 <li><span class="tools__mark tools__mark--text">W</span><div><strong>WiseOper</strong><span>Campaign building and operations</span></div></li>
-<li><span class="tools__mark"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain=www.finebi.com" alt="" onload="if(this.naturalWidth<=16){this.onerror()}" onerror="this.parentNode.classList.add('tools__mark--text');this.parentNode.textContent='F'"></span><div><strong>FineBI</strong><span>Reporting and business intelligence</span></div></li>
-<li><span class="tools__mark"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain=analytics.google.com" alt="" onload="if(this.naturalWidth<=16){this.onerror()}" onerror="this.parentNode.classList.add('tools__mark--text');this.parentNode.textContent='GA'"></span><div><strong>Google Analytics</strong><span>Traffic and campaign performance</span></div></li>
+<li><span class="tools__mark"><img src="assets/logos/finebi.png" width="83" height="78" alt="" onerror="this.parentNode.classList.add('tools__mark--text');this.parentNode.textContent='F'"></span><div><strong>FineBI</strong><span>Reporting and business intelligence</span></div></li>
+<li><span class="tools__mark"><img src="assets/logos/googleanalytics.svg" width="24" height="24" alt="" onerror="this.parentNode.classList.add('tools__mark--text');this.parentNode.textContent='GA'"></span><div><strong>Google Analytics</strong><span>Traffic and campaign performance</span></div></li>
 </ul>
 </div>
 </div>
 </section>
+<footer class="outro">
+<p class="outro__title">Thanks for reading.</p>
+<div class="hero__ctas"><a class="hero__btn hero__btn--primary" href="mailto:sanjana.s.rane21@gmail.com">Get in touch<span aria-hidden="true">↗</span></a><a class="hero__btn" href="/">← Back to portfolio</a></div>
+</footer>
 <script>
 (function(){
 const NS="http://www.w3.org/2000/svg";
@@ -405,6 +435,9 @@ if(btn)btn.addEventListener('click',()=>{const on=card.classList.toggle('is-flip
 });
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.work__head,.milestones,.step,.tools').forEach(el=>{el.classList.add('reveal');io.observe(el)});
+const still=matchMedia("(prefers-reduced-motion: reduce)").matches||(navigator.connection&&navigator.connection.saveData);
+const bg=document.querySelector(matchMedia("(max-width: 767px)").matches?".stage-motion--narrow":".stage-motion--wide");
+if(bg&&!still){bg.src=bg.dataset.src;bg.play().catch(()=>{})}
 const root=document.documentElement;
 const done=()=>{clearTimeout(window.__entranceFailsafe);root.classList.remove("entrance-active")};
 if(matchMedia("(prefers-reduced-motion: reduce)").matches){done();return}
