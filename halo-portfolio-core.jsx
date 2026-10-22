@@ -94,6 +94,47 @@ const PillButton = ({ children, textClass = "text-base md:text-lg", href, onClic
 };
 
 // ─────────── Navbar ───────────
+const PORTFOLIO = [
+  { n: "Huawei", sub: "Petal Search launch & campaigns", href: "/huawei.html" },
+  { n: "JP Morgan", sub: "Experience", href: "#experience" },
+];
+
+const PortfolioMenu = ({ go }) => {
+  const [show, setShow] = React.useState(false);
+  const ref = React.useRef(null);
+  useEffect(() => {
+    const close = (e) => { if (ref.current && !ref.current.contains(e.target)) setShow(false); };
+    document.addEventListener("click", close);
+    return () => document.removeEventListener("click", close);
+  }, []);
+  // Hover only for a real mouse: a tap on a touch tablet fires an emulated
+  // enter and then the click, which would open and immediately toggle shut.
+  return (
+    <div ref={ref} className="relative"
+      onPointerEnter={(e) => e.pointerType === "mouse" && setShow(true)}
+      onPointerLeave={(e) => e.pointerType === "mouse" && setShow(false)}>
+      <button type="button" aria-expanded={show} aria-haspopup="true" onClick={() => setShow(!show)}
+        className="flex items-center gap-1.5 text-base text-gray-700 hover:text-black font-medium transition-colors duration-200 py-2">
+        Portfolio
+        <svg viewBox="0 0 24 24" className={`w-4 h-4 transition-transform duration-200 ${show ? "rotate-180" : ""}`} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+      </button>
+      {show && (
+        <div className="absolute left-0 top-full pt-2 z-30">
+          <div className="w-64 rounded-2xl bg-white p-2 shadow-lg ring-1 ring-black/5">
+            {PORTFOLIO.map((p) => (
+              <a key={p.n} href={p.href} onClick={p.href.startsWith("#") ? go(p.href.slice(1)) : undefined}
+                className="block px-4 py-3 rounded-xl hover:bg-black/5 transition-colors duration-200">
+                <span className="block text-base font-medium text-black">{p.n}</span>
+                <span className="block text-sm text-black/60">{p.sub}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 const Navbar = () => {
   const links = ["About", "Experience", "Skills", "Recognition"];
   const [open, setOpen] = React.useState(false);
@@ -115,6 +156,7 @@ const Navbar = () => {
           {links.map((l) => (
             <a key={l} href={`#${l.toLowerCase()}`} onClick={go(l.toLowerCase())} className="text-base text-gray-700 hover:text-black font-medium transition-colors duration-200 py-2">{l}</a>
           ))}
+          <PortfolioMenu go={go} />
         </div>
         {/* ml-auto keeps the actions right-aligned now the wordmark is gone -
             without it, justify-between would pull them left on mobile where
@@ -141,6 +183,11 @@ const Navbar = () => {
           {links.map((l) => (
             <a key={l} href={`#${l.toLowerCase()}`} onClick={go(l.toLowerCase())}
               className="block px-4 py-3 rounded-xl text-base font-medium text-gray-800 hover:bg-black/5 transition-colors duration-200">{l}</a>
+          ))}
+          <div className="px-4 pt-3 pb-1 text-xs font-semibold uppercase tracking-wider text-black/50">Portfolio</div>
+          {PORTFOLIO.map((p) => (
+            <a key={p.n} href={p.href} onClick={p.href.startsWith("#") ? go(p.href.slice(1)) : () => setOpen(false)}
+              className="block px-4 py-3 rounded-xl text-base font-medium text-gray-800 hover:bg-black/5 transition-colors duration-200">{p.n}</a>
           ))}
           <a href={LINKEDIN} target="_blank" rel="noopener noreferrer"
             className="flex items-center gap-2.5 px-4 py-3 rounded-xl text-base font-medium text-gray-800 hover:bg-black/5 transition-colors duration-200">
@@ -238,9 +285,10 @@ const AboutSection = () => (
         <div className="rounded-2xl overflow-hidden lg:col-span-2 p-6 sm:p-7 sm:min-h-80 flex flex-col gap-4 sm:gap-6 sm:justify-between relative">
           <LazyVideo className="object-cover absolute inset-0 w-full h-full" src={VIDEO_B} />
           {/* The diagonal hero scrim clears text on a wide hero but leaves the
-              right side bare on a narrow card, so use a flat wash on mobile. */}
-          <div className="absolute inset-0 z-[1] pointer-events-none bg-white/75 sm:bg-transparent"></div>
-          <div className="hidden sm:block hero-scrim absolute inset-0 z-[1] pointer-events-none"></div>
+              right side bare on a narrow card, so use a flat wash until lg,
+              where this card spans two columns. */}
+          <div className="absolute inset-0 z-[1] pointer-events-none bg-white/75 lg:bg-transparent"></div>
+          <div className="hidden lg:block hero-scrim absolute inset-0 z-[1] pointer-events-none"></div>
           <h3 className="relative z-10 text-black text-[28px] font-medium leading-snug" style={{ letterSpacing: "-0.02em" }}>Campaigns that convert</h3>
           <p className="relative z-10 text-black text-[20px] font-semibold max-w-xs">Eight-figure paid-media programmes with a 20% lift in conversion and data-driven audience targeting.</p>
         </div>
@@ -281,11 +329,11 @@ const TOOLS = [
 
 const SkillsSection = () => (
   <section id="skills" className="bg-page px-4 sm:px-6 py-6 sm:py-8 md:py-12">
-    <div className="max-w-[88rem] mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 items-center">
+    <div className="max-w-[88rem] mx-auto grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-8 items-center">
       <div className="text-black/70 text-base leading-relaxed">
         Platforms &amp; tools I work across every day.
       </div>
-      <div className="md:col-span-3 overflow-hidden py-3">
+      <div className="lg:col-span-3 overflow-hidden py-3">
         <div className="backers-track">
           {[...TOOLS, ...TOOLS].map((b, i) => (
             <LogoChip key={i} name={b.n} domain={b.d} />

@@ -26,24 +26,26 @@ const JobLogo = ({ domain, dark }) => {
 
 const ExperienceCardHeader = ({ j, dark }) => (
   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
-    <div className="flex items-center gap-3.5">
+    <div className="flex items-center gap-3.5 min-w-0">
       <JobLogo domain={j.domain} dark={dark} />
       <h3 className={`text-xl sm:text-2xl font-medium leading-snug ${dark ? "text-white" : "text-black"}`} style={{ letterSpacing: "-0.02em" }}>{j.company}</h3>
     </div>
-    <span className={`text-sm whitespace-nowrap sm:mt-1 ${dark ? "text-white/50" : "text-black/50"}`}>{j.period}</span>
+    <span className={`text-sm whitespace-nowrap shrink-0 sm:mt-1 ${dark ? "text-white/50" : "text-black/50"}`}>{j.period}</span>
   </div>
 );
 
 const ExperienceSection = () => (
   <section id="experience" className="bg-page px-4 sm:px-6 py-14 sm:py-20 md:py-24">
-    <div className="max-w-[88rem] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
-      <div className="md:pr-12 md:pt-2 md:sticky md:top-10">
+    {/* Two columns only from lg: at md each card was ~330px wide, which
+        stacked company names a word per line and pushed dates off the card. */}
+    <div className="max-w-[88rem] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
+      <div className="lg:pr-12 lg:pt-2 lg:sticky lg:top-10">
         <p className="accent-text text-sm font-semibold mb-2">Where I've delivered</p>
         <h2 className="text-black text-4xl sm:text-5xl md:text-6xl font-medium leading-none mb-6" style={{ letterSpacing: "-0.04em" }}>Experience</h2>
         <p className="text-black/60 text-base leading-relaxed max-w-sm">
           Progressive roles across Tier-1 financial institutions, global technology and hospitality — delivering multi-region campaigns and regulated reporting.
         </p>
-        <div className="mt-8 rounded-3xl overflow-hidden relative min-h-[280px] sm:min-h-[360px] md:min-h-[640px]">
+        <div className="mt-8 rounded-3xl overflow-hidden relative min-h-[280px] sm:min-h-[360px] lg:min-h-[640px]">
           <LazyVideo className="object-cover absolute inset-0 w-full h-full" src={VIDEO_B} />
         </div>
       </div>
