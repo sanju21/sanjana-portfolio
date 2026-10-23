@@ -2,7 +2,7 @@
 
 // ─────────── Experience ───────────
 const JOBS = [
-  { company: "Morgan Stanley Investment Management", domain: "morganstanley.com", role: "Associate — Marketing Operations", period: "Mar 2025 — Present", region: "EMEA · US · APAC",
+  { company: "Morgan Stanley Investment Management", domain: "morganstanley.com", role: "Associate — Marketing Operations", period: "Mar 2025 — Aug 2026", region: "EMEA · US · APAC",
     note: "Lead end-to-end production of MSIM factsheets, pitchbooks and fund collateral; architected AI data-extraction saving ~200 hours annually; project-managed the first Asia-Channel migration to India." },
   { company: "JPMorgan Chase & Co.", domain: "jpmorganchase.com", role: "Marketing Delivery Analyst — Strategy & Insights", period: "Apr 2022 — Dec 2023", region: "Mumbai, India",
     note: "Managed USD 10M–18M quarterly paid social & display, achieving 5% ROI and a 20% conversion lift across JPMC and co-brands — United, Air Canada, Disney, Marriott, Hyatt." },
