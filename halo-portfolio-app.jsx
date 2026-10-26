@@ -67,11 +67,11 @@ const ExperienceSection = () => (
 // Newest first, matching Experience. Thumbnails reuse each case study's
 // link-preview card, so they always match what people see when it is shared.
 const PORTFOLIO = [
-  { n: "Morgan Stanley", org: "Morgan Stanley Investment Management", period: "2025 — 2026", href: "/morgan-stanley.html", img: "assets/og/morgan-stanley.jpg",
+  { n: "Morgan Stanley", org: "Morgan Stanley Investment Management", period: "2025 — 2026", href: "/morgan-stanley.html", img: "assets/og/morgan-stanley.jpg?v=2",
     sub: "Fund collateral, AEM web projects and AI automation across EMEA, US and APAC." },
-  { n: "JP Morgan", org: "JPMorgan Chase & Co.", period: "2022 — 2023", href: "/jpmorgan.html", img: "assets/og/jpmorgan.jpg",
+  { n: "JP Morgan", org: "JPMorgan Chase & Co.", period: "2022 — 2023", href: "/jpmorgan.html", img: "assets/og/jpmorgan.jpg?v=2",
     sub: "Audience data and segments for Chase credit and debit card campaigns." },
-  { n: "Huawei", org: "Larsen & Toubro — Huawei", period: "2020 — 2022", href: "/huawei.html", img: "assets/og/huawei.jpg",
+  { n: "Huawei", org: "Larsen & Toubro — Huawei", period: "2020 — 2022", href: "/huawei.html", img: "assets/og/huawei.jpg?v=2",
     sub: "Petal Search launch and growth campaigns across APAC, EMEA and LATAM." },
 ];
 
