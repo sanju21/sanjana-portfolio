@@ -63,6 +63,54 @@ const ExperienceSection = () => (
   </section>
 );
 
+// ─────────── Portfolio ───────────
+// Newest first, matching Experience. Thumbnails reuse each case study's
+// link-preview card, so they always match what people see when it is shared.
+const PORTFOLIO = [
+  { n: "Morgan Stanley", org: "Morgan Stanley Investment Management", period: "2025 — 2026", href: "/morgan-stanley.html", img: "assets/og/morgan-stanley.jpg",
+    sub: "Fund collateral, AEM web projects and AI automation across EMEA, US and APAC." },
+  { n: "JP Morgan", org: "JPMorgan Chase & Co.", period: "2022 — 2023", href: "/jpmorgan.html", img: "assets/og/jpmorgan.jpg",
+    sub: "Audience data and segments for Chase credit and debit card campaigns." },
+  { n: "Huawei", org: "Larsen & Toubro — Huawei", period: "2020 — 2022", href: "/huawei.html", img: "assets/og/huawei.jpg",
+    sub: "Petal Search launch and growth campaigns across APAC, EMEA and LATAM." },
+];
+
+const PortfolioSection = () => (
+  <section id="portfolio" className="bg-page px-4 sm:px-6 py-14 sm:py-20 md:py-24">
+    <div className="max-w-[88rem] mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-10 md:mb-16 items-end">
+        <div>
+          <p className="accent-text text-sm font-semibold mb-2">Case studies</p>
+          <h2 className="text-black text-4xl sm:text-5xl md:text-6xl font-medium leading-none" style={{ letterSpacing: "-0.04em" }}>Portfolio</h2>
+        </div>
+        <p className="text-black/60 text-base md:text-lg leading-relaxed max-w-md">
+          A closer look at the campaigns, workflows and automation behind each role.
+        </p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {PORTFOLIO.map((p) => (
+          <a key={p.n} href={p.href}
+            className="group rounded-2xl bg-white overflow-hidden flex flex-col ring-1 ring-black/5 transition-transform duration-300 hover:-translate-y-1">
+            <div className="aspect-[1200/630] overflow-hidden bg-card-dark">
+              <img src={p.img} alt={`${p.n} case study`} loading="lazy" width="1200" height="630"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+            </div>
+            <div className="p-6 sm:p-7 flex flex-col flex-1">
+              <div className="text-black/50 text-sm">{p.period}</div>
+              <h3 className="text-black text-xl sm:text-2xl font-medium leading-snug mt-2" style={{ letterSpacing: "-0.02em" }}>{p.org}</h3>
+              <p className="text-black/70 text-base mt-3 leading-relaxed">{p.sub}</p>
+              <span className="accent-text inline-flex items-center gap-2 text-base font-medium mt-auto pt-6">
+                View case study
+                <svg viewBox="0 0 24 24" className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
 // ─────────── Recognition ───────────
 const AWARDS = [
   { year: "2022", title: "Outstanding Performer", org: "JPMorgan Chase & Co.", note: "For architecting an in-house Automation QA tool that improved keyword accuracy and reporting efficiency." },
@@ -181,6 +229,7 @@ const App = () => {
     <AboutSection />
     <SkillsSection />
     <ExperienceSection />
+    <PortfolioSection />
     <RecognitionSection />
     <ContactSection />
 
