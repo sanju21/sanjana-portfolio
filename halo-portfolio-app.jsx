@@ -80,7 +80,6 @@ const PortfolioSection = () => (
     <div className="max-w-[88rem] mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-10 md:mb-16 items-end">
         <div>
-          <p className="accent-text text-sm font-semibold mb-2">Case studies</p>
           <h2 className="text-black text-4xl sm:text-5xl md:text-6xl font-medium leading-none" style={{ letterSpacing: "-0.04em" }}>Portfolio</h2>
         </div>
         <p className="text-black/60 text-base md:text-lg leading-relaxed max-w-md">
