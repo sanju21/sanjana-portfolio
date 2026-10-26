@@ -91,7 +91,7 @@ const PortfolioSection = () => (
           <a key={p.n} href={p.href}
             className="group rounded-2xl bg-white overflow-hidden flex flex-col ring-1 ring-black/5 transition-transform duration-300 hover:-translate-y-1">
             <div className="aspect-[1200/630] overflow-hidden bg-card-dark">
-              <img src={p.img} alt={`${p.n} case study`} loading="lazy" width="1200" height="630"
+              <img src={p.img} alt={`${p.n} portfolio`} loading="lazy" width="1200" height="630"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
             </div>
             <div className="p-6 sm:p-7 flex flex-col flex-1">
@@ -99,7 +99,7 @@ const PortfolioSection = () => (
               <h3 className="text-black text-xl sm:text-2xl font-medium leading-snug mt-2" style={{ letterSpacing: "-0.02em" }}>{p.org}</h3>
               <p className="text-black/70 text-base mt-3 leading-relaxed">{p.sub}</p>
               <span className="accent-text inline-flex items-center gap-2 text-base font-medium mt-auto pt-6">
-                View case study
+                View
                 <svg viewBox="0 0 24 24" className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>
               </span>
             </div>
